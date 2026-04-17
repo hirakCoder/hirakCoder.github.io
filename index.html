@@ -335,9 +335,10 @@ a {
 
 .hero-name {
   font-family: var(--font-serif);
-  font-size: clamp(48px, 10vw, 120px);
+  font-size: clamp(36px, 9vw, 120px);
   font-weight: 700;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.04em;
+  padding: 0 0.5rem;
   line-height: 1;
   overflow: hidden;
 }
@@ -714,7 +715,7 @@ a {
   .project-progress { display: none; }
 }
 
-/* Mobile: stacked projects */
+/* Mobile: stacked projects with video backgrounds */
 @media (max-width: 768px) {
   .projects-section.mobile-stack .projects-pin-container {
     height: auto;
@@ -723,7 +724,17 @@ a {
   .projects-section.mobile-stack .project-slide {
     position: relative;
     opacity: 1;
-    min-height: 80vh;
+    min-height: 70vh;
+    overflow: hidden;
+  }
+  .projects-section.mobile-stack .project-video {
+    opacity: 0.2;
+  }
+  .projects-section.mobile-stack .project-slide-bg {
+    opacity: 0.25;
+  }
+  .project-name {
+    font-size: clamp(1.75rem, 8vw, 3rem) !important;
   }
 }
 
@@ -1992,14 +2003,24 @@ a {
       }
     });
   } else {
-    // Mobile: stack projects vertically
+    // Mobile: stack projects vertically with video playback
     document.querySelector('.projects-section').classList.add('mobile-stack');
     slides.forEach(function(slide) {
+      var video = slide.querySelector('.project-video');
       gsap.from(slide.querySelector('.project-text'), {
         scrollTrigger: {
           trigger: slide,
           start: 'top 80%',
           toggleActions: 'play none none none',
+          onEnter: function() {
+            if (video && !video.src && video.dataset.src) {
+              video.src = video.dataset.src;
+            }
+            if (video) video.play().catch(function(){});
+          },
+          onLeave: function() { if (video) video.pause(); },
+          onEnterBack: function() { if (video) video.play().catch(function(){}); },
+          onLeaveBack: function() { if (video) video.pause(); },
         },
         opacity: 0, y: 40, duration: 0.8, ease: 'power4.out'
       });
