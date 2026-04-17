@@ -723,9 +723,12 @@ a {
   }
   .projects-section.mobile-stack .project-slide {
     position: relative;
-    opacity: 1;
+    opacity: 0.3;
     min-height: 70vh;
     overflow: hidden;
+    will-change: transform, opacity;
+    transform-origin: center center;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
   }
   .projects-section.mobile-stack .project-video {
     opacity: 0.2;
@@ -2003,26 +2006,57 @@ a {
       }
     });
   } else {
-    // Mobile: stack projects vertically with video playback
+    // Mobile: stack projects with cinematic scroll transitions
     document.querySelector('.projects-section').classList.add('mobile-stack');
-    slides.forEach(function(slide) {
+    slides.forEach(function(slide, i) {
       var video = slide.querySelector('.project-video');
-      gsap.from(slide.querySelector('.project-text'), {
+      var text = slide.querySelector('.project-text');
+      var bg = slide.querySelector('.project-slide-bg');
+
+      // Parallax fade-in: slide scales up and fades in as you scroll to it
+      gsap.fromTo(slide,
+        { opacity: 0.3, scale: 0.95 },
+        {
+          opacity: 1, scale: 1,
+          scrollTrigger: {
+            trigger: slide,
+            start: 'top 85%',
+            end: 'top 40%',
+            scrub: 0.5,
+            onEnter: function() {
+              if (video && !video.src && video.dataset.src) video.src = video.dataset.src;
+              if (video) video.play().catch(function(){});
+            },
+            onLeave: function() { if (video) video.pause(); },
+            onEnterBack: function() { if (video) video.play().catch(function(){}); },
+            onLeaveBack: function() { if (video) video.pause(); },
+          }
+        }
+      );
+
+      // Text slides up from below
+      gsap.fromTo(text,
+        { opacity: 0, y: 60 },
+        {
+          opacity: 1, y: 0,
+          scrollTrigger: {
+            trigger: slide,
+            start: 'top 70%',
+            end: 'top 40%',
+            scrub: 0.5,
+          }
+        }
+      );
+
+      // Fade out as you scroll past
+      gsap.to(slide, {
+        opacity: 0.3, scale: 0.95,
         scrollTrigger: {
           trigger: slide,
-          start: 'top 80%',
-          toggleActions: 'play none none none',
-          onEnter: function() {
-            if (video && !video.src && video.dataset.src) {
-              video.src = video.dataset.src;
-            }
-            if (video) video.play().catch(function(){});
-          },
-          onLeave: function() { if (video) video.pause(); },
-          onEnterBack: function() { if (video) video.play().catch(function(){}); },
-          onLeaveBack: function() { if (video) video.pause(); },
-        },
-        opacity: 0, y: 40, duration: 0.8, ease: 'power4.out'
+          start: 'bottom 50%',
+          end: 'bottom 20%',
+          scrub: 0.5,
+        }
       });
     });
   }
