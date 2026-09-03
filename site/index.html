@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hirak Banerjee</title>
+<meta name="description" content="Hirak Banerjee — Senior Quality Engineer and indie iOS developer in Toronto. 13+ years shipping enterprise software; iOS apps live in 175 countries.">
+<link rel="canonical" href="https://hirakcoder.github.io/">
+<meta property="og:title" content="Hirak Banerjee">
+<meta property="og:description" content="Quality engineer by day. Indie iOS developer at night. Apps in 175 countries.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://hirakcoder.github.io/">
+<meta property="og:image" content="https://hirakcoder.github.io/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Person","name":"Hirak Banerjee","jobTitle":"Senior Software Quality Engineer & Indie iOS Developer","address":{"@type":"PostalAddress","addressLocality":"Toronto","addressCountry":"CA"},"alumniOf":"National Institute of Technology, Agartala","url":"https://hirakcoder.github.io/","sameAs":["https://linkedin.com/in/hirak-banerjee-906aa940/","https://github.com/hirakcoder","https://x.com/hirak8"]}
+</script>
+<style>
+/* ————— Time, kept beautifully. Film-leader system: ink, bone, leader-amber. ————— */
+:root{
+  --ink:#0B0B0D; --ink-2:#131316; --bone:#F2F1EC; --bone-dim:#8F8E88;
+  --amber:#E4A93C; --hair:rgba(242,241,236,0.12); --hair-soft:rgba(242,241,236,0.06);
+  --serif:"Fraunces",Georgia,serif; --mono:"IBM Plex Mono",ui-monospace,monospace;
+  --ease:cubic-bezier(0.16,1,0.3,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:var(--ink);color:var(--bone);
+  font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue",sans-serif;
+  font-size:16px;line-height:1.6;overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+::selection{background:var(--amber);color:var(--ink)}
+a{color:inherit}
+img,video{max-width:100%;display:block}
+
+/* Film grain — one animated overlay, GPU-cheap */
+.grain{position:fixed;inset:-100%;z-index:1;pointer-events:none;opacity:.05;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23n)' opacity='0.6'/%3E%3C/svg%3E");
+  animation:grain 7s steps(10) infinite}
+@keyframes grain{
+  0%,100%{transform:translate(0,0)}10%{transform:translate(-2%,-3%)}20%{transform:translate(3%,2%)}
+  30%{transform:translate(-4%,1%)}40%{transform:translate(2%,-4%)}50%{transform:translate(-3%,3%)}
+  60%{transform:translate(4%,0)}70%{transform:translate(0,4%)}80%{transform:translate(-2%,2%)}90%{transform:translate(3%,-3%)}}
+
+/* Playhead progress */
+.playhead{position:fixed;top:0;left:0;height:2px;width:100%;z-index:60;transform-origin:0 50%;
+  background:var(--amber);transform:scaleX(0)}
+
+/* Loader — film leader countdown */
+.leader{position:fixed;inset:0;z-index:100;background:var(--ink);display:grid;place-items:center;
+  transition:opacity .6s var(--ease),visibility .6s}
+.leader.done{opacity:0;visibility:hidden}
+.leader-ring{position:relative;width:min(42vmin,300px);aspect-ratio:1;display:grid;place-items:center;
+  border:1px solid var(--hair);border-radius:50%}
+.leader-ring::before,.leader-ring::after{content:"";position:absolute;background:var(--hair)}
+.leader-ring::before{width:100%;height:1px}
+.leader-ring::after{width:1px;height:100%}
+.leader-num{font-family:var(--serif);font-weight:600;font-size:min(22vmin,150px);line-height:1;
+  font-variant-numeric:tabular-nums;color:var(--bone)}
+.leader-sweep{position:absolute;inset:0;border-radius:50%;
+  background:conic-gradient(rgba(228,169,60,.22) var(--sweep,0deg),transparent 0)}
+
+/* Shell */
+.wrap{position:relative;z-index:2}
+.frame{max-width:1200px;margin:0 auto;padding:0 clamp(20px,4vw,48px)}
+
+/* Slate labels */
+.slate{font-family:var(--mono);font-size:11px;letter-spacing:.35em;text-transform:uppercase;
+  color:var(--bone-dim);display:flex;align-items:center;gap:14px}
+.slate::before{content:"";width:34px;height:1px;background:var(--amber)}
+
+/* Nav */
+.nav{position:fixed;top:0;left:0;right:0;z-index:50;
+  display:flex;justify-content:space-between;align-items:center;
+  padding:18px clamp(20px,4vw,48px);mix-blend-mode:difference}
+.nav a{text-decoration:none}
+.nav .sig{font-family:var(--serif);font-weight:600;font-size:19px;letter-spacing:-.01em}
+.nav .tc{font-family:var(--mono);font-size:11px;letter-spacing:.18em;color:var(--bone);opacity:.75;
+  font-variant-numeric:tabular-nums}
+
+/* Hero */
+.hero{min-height:100svh;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden}
+.hero-bg{position:absolute;inset:0;z-index:-1;opacity:.36}
+.hero-bg video{width:100%;height:100%;object-fit:cover;filter:saturate(.7) contrast(1.05)}
+.hero-bg::after{content:"";position:absolute;inset:0;
+  background:radial-gradient(120% 90% at 50% 10%,transparent 30%,var(--ink) 78%),
+             linear-gradient(180deg,rgba(11,11,13,.5),rgba(11,11,13,.25) 40%,var(--ink) 96%)}
+.hero .frame{width:100%}
+.hero h1{font-family:var(--serif);font-weight:460;font-variation-settings:"opsz" 144;
+  font-size:clamp(44px,8.6vw,120px);line-height:1.02;letter-spacing:-.015em;margin:22px 0 0}
+.hero h1 .row{display:block;overflow:hidden;padding-bottom:.06em;margin-bottom:-.06em}
+.hero h1 .row>span{display:inline-block;transform:translateY(118%);transition:transform 1.1s var(--ease)}
+.hero h1 .thin{font-style:italic;font-weight:340;color:var(--amber)}
+.hero.on h1 .row>span{transform:none}
+.hero.on .r2>span{transition-delay:.09s}
+.hero.on .r3>span{transition-delay:.18s}
+.hero.on .r4>span{transition-delay:.27s}
+.hero-sub{margin-top:34px;display:flex;flex-wrap:wrap;gap:14px 34px;align-items:baseline;
+  opacity:0;transform:translateY(14px);transition:opacity 1s var(--ease) .55s,transform 1s var(--ease) .55s}
+.hero.on .hero-sub{opacity:1;transform:none}
+.hero-sub p{max-width:44ch;color:var(--bone-dim);font-size:clamp(15px,1.6vw,18px)}
+.hero-sub .fact{font-family:var(--mono);font-size:12px;letter-spacing:.14em;color:var(--bone);
+  border-left:1px solid var(--amber);padding-left:14px;line-height:1.9;white-space:nowrap}
+.hero-foot{position:absolute;left:0;right:0;bottom:22px;display:flex;justify-content:space-between;
+  padding:0 clamp(20px,4vw,48px);font-family:var(--mono);font-size:11px;letter-spacing:.22em;
+  color:var(--bone-dim);text-transform:uppercase}
+.hero-foot .scroll-cue{display:flex;gap:10px;align-items:center}
+.hero-foot .scroll-cue::after{content:"";width:1px;height:34px;background:linear-gradient(var(--amber),transparent);
+  animation:cue 1.8s var(--ease) infinite}
+@keyframes cue{0%{transform:scaleY(0);transform-origin:top}45%{transform:scaleY(1);transform-origin:top}
+  55%{transform:scaleY(1);transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+
+/* Sections */
+section{padding:clamp(90px,12vh,150px) 0;position:relative}
+.sec-head{margin-bottom:clamp(40px,6vh,72px)}
+.sec-head h2{font-family:var(--serif);font-weight:430;font-variation-settings:"opsz" 100;
+  font-size:clamp(34px,5.4vw,72px);line-height:1.04;letter-spacing:-.015em;margin-top:18px;max-width:18ch}
+.sec-head h2 em{font-style:italic;color:var(--amber);font-weight:340}
+
+/* Reveal system */
+.rv{opacity:0;transform:translateY(28px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.rv.on{opacity:1;transform:none}
+.rv.d1{transition-delay:.08s}.rv.d2{transition-delay:.16s}.rv.d3{transition-delay:.24s}
+
+/* Work — cinematic cards */
+.works{display:flex;flex-direction:column;gap:clamp(18px,3vh,28px)}
+.work{position:relative;display:block;text-decoration:none;border:1px solid var(--hair-soft);
+  border-radius:18px;overflow:hidden;background:var(--ink-2);
+  transition:border-color .5s var(--ease),transform .6s var(--ease)}
+.work:hover{border-color:var(--hair);transform:translateY(-3px)}
+.work-media{position:relative;aspect-ratio:16/7.6;overflow:hidden;background:#0f0f12 center/cover no-repeat}
+@media(max-width:640px){.work-media{aspect-ratio:16/10}}
+.work-media video{width:100%;height:100%;object-fit:cover;transform:scale(1.03);
+  filter:saturate(.85);transition:transform 1.4s var(--ease),filter 1.4s var(--ease)}
+.work:hover .work-media video{transform:scale(1);filter:saturate(1)}
+.work-media::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(200deg,rgba(11,11,13,.05) 30%,rgba(11,11,13,.88) 88%)}
+.work-body{position:absolute;left:0;right:0;bottom:0;padding:clamp(18px,3vw,34px);
+  display:flex;justify-content:space-between;align-items:flex-end;gap:18px}
+.work-name{font-family:var(--serif);font-weight:470;font-size:clamp(26px,3.6vw,46px);
+  letter-spacing:-.015em;line-height:1.05}
+.work-role{font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--amber);margin-bottom:10px}
+.work-desc{color:var(--bone-dim);max-width:46ch;margin-top:8px;font-size:14.5px}
+.work-cta{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--bone);white-space:nowrap;border-bottom:1px solid var(--amber);padding-bottom:4px;
+  opacity:.75;transition:opacity .4s}
+.work:hover .work-cta{opacity:1}
+.work-index{position:absolute;top:18px;left:22px;font-family:var(--mono);font-size:11px;
+  letter-spacing:.25em;color:rgba(242,241,236,.55)}
+
+/* Craft */
+.craft-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1px;
+  background:var(--hair-soft);border:1px solid var(--hair-soft);border-radius:18px;overflow:hidden}
+.craft{background:var(--ink);padding:30px 26px}
+.craft h3{font-family:var(--serif);font-weight:470;font-size:21px;margin-bottom:16px;letter-spacing:-.01em}
+.craft .pills{display:flex;flex-wrap:wrap;gap:8px}
+.craft .pills span{font-family:var(--mono);font-size:11.5px;letter-spacing:.05em;color:var(--bone-dim);
+  border:1px solid var(--hair);border-radius:100px;padding:5px 12px}
+
+/* Timeline — film strip */
+.strip{border-left:1px solid var(--hair);margin-left:6px;padding-left:clamp(26px,4vw,46px);
+  display:flex;flex-direction:column;gap:clamp(44px,7vh,64px)}
+.job{position:relative}
+.job::before{content:"";position:absolute;left:calc(-1 * clamp(26px,4vw,46px) - 10.5px);top:8px;
+  width:9px;height:9px;border-radius:50%;background:var(--ink);border:2px solid var(--amber)}
+.job .date{font-family:var(--mono);font-size:11px;letter-spacing:.25em;color:var(--amber);text-transform:uppercase}
+.job h3{font-family:var(--serif);font-weight:470;font-size:clamp(21px,2.6vw,29px);margin:10px 0 4px;letter-spacing:-.01em}
+.job .co{color:var(--bone-dim);font-size:14.5px}
+.job p{color:var(--bone-dim);max-width:62ch;margin-top:10px;font-size:14.5px}
+.job .awards{margin-top:12px;display:flex;flex-wrap:wrap;gap:8px}
+.job .awards span{font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;color:var(--amber);
+  border:1px solid rgba(228,169,60,.35);border-radius:100px;padding:4px 11px}
+.strip-meta{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;
+  margin-top:clamp(48px,7vh,72px)}
+.meta-card{border:1px solid var(--hair-soft);border-radius:16px;padding:24px}
+.meta-card .k{font-family:var(--mono);font-size:10.5px;letter-spacing:.3em;text-transform:uppercase;color:var(--bone-dim)}
+.meta-card .v{font-family:var(--serif);font-size:19px;font-weight:470;margin-top:10px}
+.meta-card .s{color:var(--bone-dim);font-size:13.5px;margin-top:4px}
+
+/* Contact */
+.contact{text-align:left;padding-bottom:clamp(60px,8vh,100px)}
+.contact h2{font-family:var(--serif);font-weight:430;font-variation-settings:"opsz" 144;
+  font-size:clamp(44px,9vw,130px);line-height:1;letter-spacing:-.02em;margin-top:18px}
+.contact h2 a{text-decoration:none;font-style:italic;color:var(--amber);font-weight:340;
+  transition:opacity .4s}
+.contact h2 a:hover{opacity:.75}
+.contact .links{margin-top:clamp(36px,6vh,54px);display:flex;flex-wrap:wrap;gap:12px}
+.contact .links a{font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;
+  text-decoration:none;color:var(--bone);border:1px solid var(--hair);border-radius:100px;
+  padding:11px 22px;transition:border-color .4s var(--ease),background .4s var(--ease),color .4s}
+.contact .links a:hover{border-color:var(--amber);background:var(--amber);color:var(--ink)}
+
+/* Footer */
+footer{border-top:1px solid var(--hair-soft);padding:26px 0 34px}
+footer .frame{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;
+  font-family:var(--mono);font-size:11px;letter-spacing:.18em;color:var(--bone-dim);text-transform:uppercase}
+
+/* Cursor (desktop) */
+.dot{position:fixed;z-index:90;width:6px;height:6px;border-radius:50%;background:var(--amber);
+  pointer-events:none;transform:translate(-50%,-50%);transition:width .25s,height .25s,opacity .3s;opacity:0}
+@media(hover:none){.dot{display:none}}
+
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  .grain,.leader-sweep{animation:none}
+  .leader{display:none}
+  .rv,.hero h1 .row>span,.hero-sub{opacity:1;transform:none;transition:none}
+  .hero-foot .scroll-cue::after{animation:none}
+  *{transition-duration:.01ms !important}
+}
+</style>
+</head>
+<body>
+
+<div class="leader" id="leader" aria-hidden="true">
+  <div class="leader-ring">
+    <div class="leader-sweep" id="sweep"></div>
+    <div class="leader-num" id="leaderNum">3</div>
+  </div>
+</div>
+
+<div class="grain" aria-hidden="true"></div>
+<div class="playhead" id="playhead" aria-hidden="true"></div>
+<div class="dot" id="dot" aria-hidden="true"></div>
+
+<nav class="nav">
+  <a class="sig" href="#top">Hirak&nbsp;Banerjee</a>
+  <span class="tc" id="timecode">00:00:00:00</span>
+</nav>
+
+<div class="wrap" id="top">
+
+<!-- HERO -->
+<header class="hero" id="hero">
+  <div class="hero-bg" aria-hidden="true">
+    <video autoplay muted loop playsinline preload="metadata" poster="">
+      <source src="/videos/hero-silhouette.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="frame">
+    <p class="slate">Toronto · EST — Scene 00</p>
+    <h1>
+      <span class="row r1"><span>Quality engineer</span></span>
+      <span class="row r2"><span>by day.</span></span>
+      <span class="row r3"><span class="thin">Indie iOS dev</span></span>
+      <span class="row r4"><span class="thin">by night.</span></span>
+    </h1>
+    <div class="hero-sub">
+      <p>Thirteen years shipping enterprise software for banks and insurers.
+      Nights and weekends: apps on the App Store in 175 countries, a developer
+      publication, a short film, two singles.</p>
+      <span class="fact">13+ YRS ENTERPRISE<br>APPS IN 175 COUNTRIES<br>1 SHORT FILM · 2 SINGLES</span>
+    </div>
+  </div>
+  <div class="hero-foot">
+    <span class="scroll-cue">Scroll</span>
+    <span>REC ● LIVE</span>
+  </div>
+</header>
+
+<!-- WORK -->
+<section id="work">
+  <div class="frame">
+    <div class="sec-head rv">
+      <p class="slate">SC.01 — Selected Work</p>
+      <h2>Things I ship <em>after hours.</em></h2>
+    </div>
+    <div class="works">
+
+      <a class="work rv" href="https://daydrop.beatroot.dev" target="_blank" rel="noopener noreferrer">
+        <div class="work-media"><video muted loop playsinline preload="none" poster="/videos/poster-daydrop.jpg" data-src="/videos/hero-daydrop.mp4"></video></div>
+        <span class="work-index">01 / 06</span>
+        <div class="work-body">
+          <div>
+            <p class="work-role">iOS · Live on the App Store · 175 countries</p>
+            <p class="work-name">DayDrop</p>
+            <p class="work-desc">Countdown widgets for iPhone — AI-generated backgrounds, Dynamic Island Live Activities, Apple Watch. 4.7★ worldwide.</p>
+          </div>
+          <span class="work-cta">App Store ↗</span>
+        </div>
+      </a>
+
+      <a class="work rv" href="https://swiftgenai.dev" target="_blank" rel="noopener noreferrer">
+        <div class="work-media"><video muted loop playsinline preload="none" poster="/videos/poster-swiftgenai.jpg" data-src="/videos/hero-swiftgenai.mp4"></video></div>
+        <span class="work-index">02 / 06</span>
+        <div class="work-body">
+          <div>
+            <p class="work-role">iOS · In development</p>
+            <p class="work-name">SwiftGenAI</p>
+            <p class="work-desc">Build iOS apps from plain English — AI prototyping that turns natural language into SwiftUI.</p>
+          </div>
+          <span class="work-cta">Visit ↗</span>
+        </div>
+      </a>
+
+      <a class="work rv" href="https://stackwrite.com" target="_blank" rel="noopener noreferrer">
+        <div class="work-media"><video muted loop playsinline preload="none" poster="/videos/poster-stackwrite.jpg" data-src="/videos/hero-stackwrite.mp4"></video></div>
+        <span class="work-index">03 / 06</span>
+        <div class="work-body">
+          <div>
+            <p class="work-role">Publication · cited by AI assistants</p>
+            <p class="work-name">Stackwrite</p>
+            <p class="work-desc">A developer-tools reference site — verified pricing and limits, re-checked monthly.</p>
+          </div>
+          <span class="work-cta">Read ↗</span>
+        </div>
+      </a>
+
+      <a class="work rv" href="#" tabindex="-1" style="pointer-events:none">
+        <div class="work-media"><video muted loop playsinline preload="none" poster="/videos/poster-film.jpg" data-src="/videos/hero-film.mp4"></video></div>
+        <span class="work-index">04 / 06</span>
+        <div class="work-body">
+          <div>
+            <p class="work-role">Writer · Director · Editor</p>
+            <p class="work-name">Short Film</p>
+            <p class="work-desc">Written, directed and edited solo. Graded in DaVinci Resolve. Festival submission.</p>
+          </div>
+          <span class="work-cta">Coming soon</span>
+        </div>
+      </a>
+
+      <a class="work rv" href="https://youtube.com/@footballmemesai" target="_blank" rel="noopener noreferrer">
+        <div class="work-media"><video muted loop playsinline preload="none" poster="/videos/poster-youtube.jpg" data-src="/videos/hero-youtube.mp4"></video></div>
+        <span class="work-index">05 / 06</span>
+        <div class="work-body">
+          <div>
+            <p class="work-role">YouTube · 1,800 subs in 2 months</p>
+            <p class="work-name">FootballMemesAI</p>
+            <p class="work-desc">AI-generated football meme channel — workflow, voice and edit pipeline built from zero.</p>
+          </div>
+          <span class="work-cta">Watch ↗</span>
+        </div>
+      </a>
+
+      <a class="work rv" href="https://linktr.ee/hirak10" target="_blank" rel="noopener noreferrer">
+        <div class="work-media"><video muted loop playsinline preload="none" poster="/videos/poster-music.jpg" data-src="/videos/hero-music.mp4"></video></div>
+        <span class="work-index">06 / 06</span>
+        <div class="work-body">
+          <div>
+            <p class="work-role">Composer · Producer · 2 singles</p>
+            <p class="work-name">Original Music</p>
+            <p class="work-desc">Composed and produced in FL Studio, distributed to streaming platforms.</p>
+          </div>
+          <span class="work-cta">Listen ↗</span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- CRAFT -->
+<section id="craft">
+  <div class="frame">
+    <div class="sec-head rv">
+      <p class="slate">SC.02 — Craft</p>
+      <h2>The toolkit, <em>sharpened daily.</em></h2>
+    </div>
+    <div class="craft-grid rv d1">
+      <div class="craft"><h3>Test Automation</h3><div class="pills"><span>Java</span><span>Selenium</span><span>Cucumber</span><span>REST Assured</span><span>XCUITest</span></div></div>
+      <div class="craft"><h3>iOS Development</h3><div class="pills"><span>Swift</span><span>SwiftUI</span><span>WidgetKit</span><span>ActivityKit</span></div></div>
+      <div class="craft"><h3>AI &amp; Automation</h3><div class="pills"><span>Claude Code</span><span>AI Agents</span><span>MCP Servers</span></div></div>
+      <div class="craft"><h3>Video &amp; Audio</h3><div class="pills"><span>DaVinci Resolve</span><span>CapCut</span><span>FL Studio</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section id="timeline">
+  <div class="frame">
+    <div class="sec-head rv">
+      <p class="slate">SC.03 — The Long Take</p>
+      <h2>Fourteen years, <em>one continuous shot.</em></h2>
+    </div>
+    <div class="strip">
+      <div class="job rv">
+        <p class="date">2021 — Present</p>
+        <h3>Senior Software Quality Engineer</h3>
+        <p class="co">Tata Consultancy Services · Banking &amp; Financial Services</p>
+        <p>Enterprise automation frameworks, API testing, iOS mobile automation, and CI/CD via Jenkins for major banking clients.</p>
+      </div>
+      <div class="job rv">
+        <p class="date">2018 — 2021</p>
+        <h3>Senior QE / Test Lead</h3>
+        <p class="co">Cognizant · Insurance &amp; Wealth Management</p>
+        <p>Led offshore–onshore automation POCs, mentored junior engineers, drove shift-left QA adoption across insurance platforms.</p>
+      </div>
+      <div class="job rv">
+        <p class="date">2012 — 2018</p>
+        <h3>Quality Engineer</h3>
+        <p class="co">Cognizant · Insurance &amp; Wealth Management</p>
+        <p>Automation frameworks with Selenium, TestNG and Robot Framework. BDD/TDD adoption, ETL testing, cross-browser validation.</p>
+        <div class="awards"><span>Best Innovation 2016</span><span>Best Innovation 2014</span><span>Best Project 2014</span></div>
+      </div>
+    </div>
+    <div class="strip-meta">
+      <div class="meta-card rv"><p class="k">Education</p><p class="v">B.Tech, Electronics &amp; Communication</p><p class="s">National Institute of Technology, Agartala · 2008–2012</p></div>
+      <div class="meta-card rv d1"><p class="k">Recognition</p><p class="v">3 Innovation &amp; Project Awards</p><p class="s">Cognizant Technology Solutions · 2014–2016</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="frame">
+    <p class="slate rv">SC.04 — Final Frame</p>
+    <h2 class="rv d1">Got something worth building?<br><a href="mailto:hirak.b@hotmail.com">Roll&nbsp;camera&nbsp;→</a></h2>
+    <div class="links rv d2">
+      <a href="mailto:hirak.b@hotmail.com">Email</a>
+      <a href="https://linkedin.com/in/hirak-banerjee-906aa940/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a href="https://github.com/hirakcoder" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a href="https://x.com/hirak8" target="_blank" rel="noopener noreferrer">X</a>
+      <a href="https://youtube.com/channel/UCMacTlcyy0TRgce7cnWdASw" target="_blank" rel="noopener noreferrer">YouTube</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="frame">
+    <span>© 2026 Hirak Banerjee</span>
+    <span>Cut on location in Toronto</span>
+  </div>
+</footer>
+
+</div>
+
+<script>
+(function(){
+  var reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* Film-leader countdown: 3-2-1, sweep, then reveal hero */
+  var leader=document.getElementById('leader'),num=document.getElementById('leaderNum'),
+      sweep=document.getElementById('sweep'),hero=document.getElementById('hero');
+  var revealed=false;
+  function reveal(){if(revealed)return;revealed=true;leader.classList.add('done');hero.classList.add('on');}
+  setTimeout(reveal,2600); // hard safety: never trap a visitor if rAF throttles
+  if(reduced){reveal();}
+  else{
+    var n=3,t0=performance.now(),per=380;
+    (function tick(now){
+      var el=now-t0,phase=Math.min(el/per,1);
+      sweep.style.setProperty('--sweep',(phase*360)+'deg');
+      if(phase>=1){n--;if(n<1){reveal();return;}num.textContent=n;t0=now;}
+      requestAnimationFrame(tick);
+    })(t0);
+  }
+
+  /* Live timecode HH:MM:SS:FF */
+  var tc=document.getElementById('timecode');
+  setInterval(function(){
+    var d=new Date(),p=function(x){return String(x).padStart(2,'0')};
+    tc.textContent=p(d.getHours())+':'+p(d.getMinutes())+':'+p(d.getSeconds())+':'+p(Math.floor(d.getMilliseconds()/41.7)%24);
+  },42);
+
+  /* Playhead scroll progress */
+  var ph=document.getElementById('playhead');
+  addEventListener('scroll',function(){
+    var h=document.documentElement,max=h.scrollHeight-h.clientHeight;
+    ph.style.transform='scaleX('+(max?h.scrollTop/max:0)+')';
+  },{passive:true});
+
+  /* Reveal on scroll */
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target);}});
+  },{threshold:.18,rootMargin:'0px 0px -6% 0px'});
+  document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
+
+  /* Lazy project videos: load + play when near viewport, pause off-screen */
+  var vio=new IntersectionObserver(function(es){
+    es.forEach(function(e){
+      var v=e.target;
+      if(e.isIntersecting){
+        if(!v.src&&v.dataset.src){v.src=v.dataset.src;}
+        v.play&&v.play().catch(function(){});
+      } else { v.pause&&v.pause(); }
+    });
+  },{rootMargin:'220px 0px'});
+  document.querySelectorAll('.work-media video').forEach(function(v){vio.observe(v)});
+
+  /* Cursor dot (desktop) */
+  var dot=document.getElementById('dot');
+  if(matchMedia('(hover:hover)').matches&&!reduced){
+    addEventListener('mousemove',function(e){
+      dot.style.opacity=1;dot.style.left=e.clientX+'px';dot.style.top=e.clientY+'px';
+    },{passive:true});
+    document.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('mouseenter',function(){dot.style.width='26px';dot.style.height='26px';dot.style.opacity=.5;});
+      a.addEventListener('mouseleave',function(){dot.style.width='6px';dot.style.height='6px';dot.style.opacity=1;});
+    });
+  }
+})();
+</script>
+</body>
+</html>
