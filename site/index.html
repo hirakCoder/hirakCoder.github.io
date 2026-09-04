@@ -4,353 +4,290 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Hirak Banerjee</title>
-<meta name="description" content="Hirak Banerjee — Senior Quality Engineer and indie iOS developer in Toronto. 13+ years shipping enterprise software; iOS apps live in 175 countries.">
+<meta name="description" content="Hirak Banerjee — Senior Quality Engineer in Toronto with 14 years in banking and insurance. Off the clock: iOS apps in 175 countries, an open-source macOS app, and a developer reference cited by AI assistants.">
 <link rel="canonical" href="https://hirakcoder.github.io/">
 <meta property="og:title" content="Hirak Banerjee">
-<meta property="og:description" content="Quality engineer by day. Indie iOS developer at night. Apps in 175 countries.">
+<meta property="og:description" content="Quality engineer who ships and writes. iOS apps in 175 countries, open-source macOS tools, a developer reference cited by AI.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://hirakcoder.github.io/">
 <meta property="og:image" content="https://hirakcoder.github.io/og-image.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..600&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Person","name":"Hirak Banerjee","jobTitle":"Senior Software Quality Engineer & Indie iOS Developer","address":{"@type":"PostalAddress","addressLocality":"Toronto","addressCountry":"CA"},"alumniOf":"National Institute of Technology, Agartala","url":"https://hirakcoder.github.io/","sameAs":["https://linkedin.com/in/hirak-banerjee-906aa940/","https://github.com/hirakcoder","https://x.com/hirak8"]}
+{"@context":"https://schema.org","@type":"Person","name":"Hirak Banerjee","jobTitle":"Senior Software Quality Engineer","address":{"@type":"PostalAddress","addressLocality":"Toronto","addressCountry":"CA"},"alumniOf":"National Institute of Technology, Agartala","url":"https://hirakcoder.github.io/","sameAs":["https://linkedin.com/in/hirak-banerjee-906aa940/","https://github.com/hirakcoder","https://x.com/hirak8"]}
 </script>
 <style>
-/* ————— Time, kept beautifully. Film-leader system: ink, bone, leader-amber. ————— */
+/* ————— Engineer who ships and writes. Precision + editorial. ————— */
 :root{
-  --ink:#0B0B0D; --ink-2:#131316; --bone:#F2F1EC; --bone-dim:#8F8E88;
-  --amber:#E4A93C; --hair:rgba(242,241,236,0.12); --hair-soft:rgba(242,241,236,0.06);
+  --ink:#0C0D0F; --ink-2:#141518; --paper:#F4F2EC; --dim:#8B8A84;
+  --brass:#D89A34; --hair:rgba(244,242,236,0.11); --hair-2:rgba(244,242,236,0.055);
   --serif:"Fraunces",Georgia,serif; --mono:"IBM Plex Mono",ui-monospace,monospace;
+  --sans:-apple-system,BlinkMacSystemFont,"Helvetica Neue",sans-serif;
   --ease:cubic-bezier(0.16,1,0.3,1);
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{
-  background:var(--ink);color:var(--bone);
-  font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue",sans-serif;
-  font-size:16px;line-height:1.6;overflow-x:hidden;
-  -webkit-font-smoothing:antialiased;
-}
-::selection{background:var(--amber);color:var(--ink)}
+body{background:var(--ink);color:var(--paper);font-family:var(--sans);
+  font-size:16px;line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+::selection{background:var(--brass);color:var(--ink)}
 a{color:inherit}
 img,video{max-width:100%;display:block}
 
-/* Film grain — one animated overlay, GPU-cheap */
-.grain{position:fixed;inset:-100%;z-index:1;pointer-events:none;opacity:.05;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23n)' opacity='0.6'/%3E%3C/svg%3E");
-  animation:grain 7s steps(10) infinite}
-@keyframes grain{
-  0%,100%{transform:translate(0,0)}10%{transform:translate(-2%,-3%)}20%{transform:translate(3%,2%)}
-  30%{transform:translate(-4%,1%)}40%{transform:translate(2%,-4%)}50%{transform:translate(-3%,3%)}
-  60%{transform:translate(4%,0)}70%{transform:translate(0,4%)}80%{transform:translate(-2%,2%)}90%{transform:translate(3%,-3%)}}
+/* Thin scroll progress — the one motion signature, quiet */
+.prog{position:fixed;top:0;left:0;height:2px;width:100%;z-index:60;transform-origin:0 50%;
+  background:var(--brass);transform:scaleX(0)}
 
-/* Playhead progress */
-.playhead{position:fixed;top:0;left:0;height:2px;width:100%;z-index:60;transform-origin:0 50%;
-  background:var(--amber);transform:scaleX(0)}
+.frame{max-width:1120px;margin:0 auto;padding:0 clamp(20px,4vw,44px)}
 
-/* Loader — film leader countdown */
-.leader{position:fixed;inset:0;z-index:100;background:var(--ink);display:grid;place-items:center;
-  transition:opacity .6s var(--ease),visibility .6s}
-.leader.done{opacity:0;visibility:hidden}
-.leader-ring{position:relative;width:min(42vmin,300px);aspect-ratio:1;display:grid;place-items:center;
-  border:1px solid var(--hair);border-radius:50%}
-.leader-ring::before,.leader-ring::after{content:"";position:absolute;background:var(--hair)}
-.leader-ring::before{width:100%;height:1px}
-.leader-ring::after{width:1px;height:100%}
-.leader-num{font-family:var(--serif);font-weight:600;font-size:min(22vmin,150px);line-height:1;
-  font-variant-numeric:tabular-nums;color:var(--bone)}
-.leader-sweep{position:absolute;inset:0;border-radius:50%;
-  background:conic-gradient(rgba(228,169,60,.22) var(--sweep,0deg),transparent 0)}
-
-/* Shell */
-.wrap{position:relative;z-index:2}
-.frame{max-width:1200px;margin:0 auto;padding:0 clamp(20px,4vw,48px)}
-
-/* Slate labels */
-.slate{font-family:var(--mono);font-size:11px;letter-spacing:.35em;text-transform:uppercase;
-  color:var(--bone-dim);display:flex;align-items:center;gap:14px}
-.slate::before{content:"";width:34px;height:1px;background:var(--amber)}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.28em;text-transform:uppercase;
+  color:var(--dim);display:flex;align-items:center;gap:14px}
+.eyebrow::before{content:"";width:30px;height:1px;background:var(--brass)}
 
 /* Nav */
-.nav{position:fixed;top:0;left:0;right:0;z-index:50;
-  display:flex;justify-content:space-between;align-items:center;
-  padding:18px clamp(20px,4vw,48px);mix-blend-mode:difference}
-.nav a{text-decoration:none}
-.nav .sig{font-family:var(--serif);font-weight:600;font-size:19px;letter-spacing:-.01em}
-.nav .tc{font-family:var(--mono);font-size:11px;letter-spacing:.18em;color:var(--bone);opacity:.75;
-  font-variant-numeric:tabular-nums}
+.nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;justify-content:space-between;align-items:center;
+  padding:20px clamp(20px,4vw,44px);mix-blend-mode:difference}
+.nav .sig{font-family:var(--serif);font-weight:500;font-size:18px;letter-spacing:-.01em;text-decoration:none}
+.nav .to{font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--paper);opacity:.7;text-decoration:none}
 
 /* Hero */
-.hero{min-height:100svh;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden}
-.hero-bg{position:absolute;inset:0;z-index:-1;opacity:.36}
-.hero-bg video{width:100%;height:100%;object-fit:cover;filter:saturate(.7) contrast(1.05)}
-.hero-bg::after{content:"";position:absolute;inset:0;
-  background:radial-gradient(120% 90% at 50% 10%,transparent 30%,var(--ink) 78%),
-             linear-gradient(180deg,rgba(11,11,13,.5),rgba(11,11,13,.25) 40%,var(--ink) 96%)}
-.hero .frame{width:100%}
-.hero h1{font-family:var(--serif);font-weight:460;font-variation-settings:"opsz" 144;
-  font-size:clamp(44px,8.6vw,120px);line-height:1.02;letter-spacing:-.015em;margin:22px 0 0}
-.hero h1 .row{display:block;overflow:hidden;padding-bottom:.06em;margin-bottom:-.06em}
-.hero h1 .row>span{display:inline-block;transform:translateY(118%);transition:transform 1.1s var(--ease)}
-.hero h1 .thin{font-style:italic;font-weight:340;color:var(--amber)}
-.hero.on h1 .row>span{transform:none}
-.hero.on .r2>span{transition-delay:.09s}
-.hero.on .r3>span{transition-delay:.18s}
-.hero.on .r4>span{transition-delay:.27s}
-.hero-sub{margin-top:34px;display:flex;flex-wrap:wrap;gap:14px 34px;align-items:baseline;
-  opacity:0;transform:translateY(14px);transition:opacity 1s var(--ease) .55s,transform 1s var(--ease) .55s}
+.hero{min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding:120px 0 90px}
+.hero h1{font-family:var(--serif);font-variation-settings:"opsz" 144;font-weight:420;
+  font-size:clamp(38px,7.4vw,104px);line-height:1.04;letter-spacing:-.02em;margin:24px 0 0}
+.hero h1 .ln{display:block;overflow:hidden;padding-bottom:.05em;margin-bottom:-.05em}
+.hero h1 .ln>span{display:inline-block;transform:translateY(115%);transition:transform 1s var(--ease)}
+.hero.on h1 .ln>span{transform:none}
+.hero.on .l2>span{transition-delay:.08s}.hero.on .l3>span{transition-delay:.16s}
+.hero h1 em{font-style:italic;font-weight:340;color:var(--brass)}
+.hero-sub{margin-top:36px;max-width:62ch;color:var(--dim);font-size:clamp(15px,1.7vw,19px);
+  opacity:0;transform:translateY(12px);transition:opacity .9s var(--ease) .5s,transform .9s var(--ease) .5s}
 .hero.on .hero-sub{opacity:1;transform:none}
-.hero-sub p{max-width:44ch;color:var(--bone-dim);font-size:clamp(15px,1.6vw,18px)}
-.hero-sub .fact{font-family:var(--mono);font-size:12px;letter-spacing:.14em;color:var(--bone);
-  border-left:1px solid var(--amber);padding-left:14px;line-height:1.9;white-space:nowrap}
-.hero-foot{position:absolute;left:0;right:0;bottom:22px;display:flex;justify-content:space-between;
-  padding:0 clamp(20px,4vw,48px);font-family:var(--mono);font-size:11px;letter-spacing:.22em;
-  color:var(--bone-dim);text-transform:uppercase}
-.hero-foot .scroll-cue{display:flex;gap:10px;align-items:center}
-.hero-foot .scroll-cue::after{content:"";width:1px;height:34px;background:linear-gradient(var(--amber),transparent);
-  animation:cue 1.8s var(--ease) infinite}
-@keyframes cue{0%{transform:scaleY(0);transform-origin:top}45%{transform:scaleY(1);transform-origin:top}
-  55%{transform:scaleY(1);transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+.hero-sub b{color:var(--paper);font-weight:500}
+.hero-stats{margin-top:44px;display:flex;flex-wrap:wrap;gap:14px 42px;
+  opacity:0;transition:opacity 1s var(--ease) .7s}
+.hero.on .hero-stats{opacity:1}
+.hero-stats div{font-family:var(--mono);font-size:12px;letter-spacing:.05em;color:var(--paper);
+  border-left:1px solid var(--brass);padding-left:13px;line-height:1.35}
+.hero-stats span{color:var(--dim);display:block;font-size:11px;letter-spacing:.16em;text-transform:uppercase;margin-top:3px}
 
 /* Sections */
-section{padding:clamp(90px,12vh,150px) 0;position:relative}
-.sec-head{margin-bottom:clamp(40px,6vh,72px)}
-.sec-head h2{font-family:var(--serif);font-weight:430;font-variation-settings:"opsz" 100;
-  font-size:clamp(34px,5.4vw,72px);line-height:1.04;letter-spacing:-.015em;margin-top:18px;max-width:18ch}
-.sec-head h2 em{font-style:italic;color:var(--amber);font-weight:340}
+section{padding:clamp(84px,11vh,140px) 0;position:relative}
+.sec-head{margin-bottom:clamp(38px,6vh,66px);max-width:760px}
+.sec-head h2{font-family:var(--serif);font-variation-settings:"opsz" 90;font-weight:400;
+  font-size:clamp(30px,4.8vw,60px);line-height:1.08;letter-spacing:-.02em;margin-top:16px}
+.sec-head h2 em{font-style:italic;color:var(--brass);font-weight:340}
+.sec-head p{color:var(--dim);margin-top:16px;max-width:56ch}
 
-/* Reveal system */
-.rv{opacity:0;transform:translateY(28px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+/* Reveal */
+.rv{opacity:0;transform:translateY(26px);transition:opacity .85s var(--ease),transform .85s var(--ease)}
 .rv.on{opacity:1;transform:none}
-.rv.d1{transition-delay:.08s}.rv.d2{transition-delay:.16s}.rv.d3{transition-delay:.24s}
+.rv.d1{transition-delay:.07s}.rv.d2{transition-delay:.14s}.rv.d3{transition-delay:.21s}
 
-/* Work — cinematic cards */
-.works{display:flex;flex-direction:column;gap:clamp(18px,3vh,28px)}
-.work{position:relative;display:block;text-decoration:none;border:1px solid var(--hair-soft);
-  border-radius:18px;overflow:hidden;background:var(--ink-2);
+/* Pillars — the three that matter */
+.pillars{display:flex;flex-direction:column;gap:clamp(16px,2.4vh,24px)}
+.pillar{position:relative;display:grid;grid-template-columns:1.05fr 1fr;text-decoration:none;
+  border:1px solid var(--hair-2);border-radius:18px;overflow:hidden;background:var(--ink-2);
   transition:border-color .5s var(--ease),transform .6s var(--ease)}
-.work:hover{border-color:var(--hair);transform:translateY(-3px)}
-.work-media{position:relative;aspect-ratio:16/7.6;overflow:hidden;background:#0f0f12 center/cover no-repeat}
-@media(max-width:640px){.work-media{aspect-ratio:16/10}}
-.work-media video{width:100%;height:100%;object-fit:cover;transform:scale(1.03);
-  filter:saturate(.85);transition:transform 1.4s var(--ease),filter 1.4s var(--ease)}
-.work:hover .work-media video{transform:scale(1);filter:saturate(1)}
-.work-media::after{content:"";position:absolute;inset:0;
-  background:linear-gradient(200deg,rgba(11,11,13,.05) 30%,rgba(11,11,13,.88) 88%)}
-.work-body{position:absolute;left:0;right:0;bottom:0;padding:clamp(18px,3vw,34px);
-  display:flex;justify-content:space-between;align-items:flex-end;gap:18px}
-.work-name{font-family:var(--serif);font-weight:470;font-size:clamp(26px,3.6vw,46px);
-  letter-spacing:-.015em;line-height:1.05}
-.work-role{font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;
-  color:var(--amber);margin-bottom:10px}
-.work-desc{color:var(--bone-dim);max-width:46ch;margin-top:8px;font-size:14.5px}
-.work-cta{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;
-  color:var(--bone);white-space:nowrap;border-bottom:1px solid var(--amber);padding-bottom:4px;
-  opacity:.75;transition:opacity .4s}
-.work:hover .work-cta{opacity:1}
-.work-index{position:absolute;top:18px;left:22px;font-family:var(--mono);font-size:11px;
-  letter-spacing:.25em;color:rgba(242,241,236,.55)}
+.pillar:hover{border-color:var(--hair);transform:translateY(-3px)}
+@media(max-width:760px){.pillar{grid-template-columns:1fr}}
+.pillar-body{padding:clamp(26px,3.2vw,42px);display:flex;flex-direction:column;justify-content:space-between;gap:22px;min-height:230px}
+.pillar-kicker{font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--brass)}
+.pillar-name{font-family:var(--serif);font-weight:480;font-size:clamp(28px,3.4vw,44px);letter-spacing:-.02em;line-height:1.02;margin:14px 0 12px}
+.pillar-desc{color:var(--dim);font-size:15px;line-height:1.65;max-width:44ch}
+.pillar-foot{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;margin-top:8px}
+.pillar-tags{display:flex;flex-wrap:wrap;gap:7px}
+.pillar-tags span{font-family:var(--mono);font-size:11px;color:var(--dim);border:1px solid var(--hair);border-radius:100px;padding:4px 10px}
+.pillar-cta{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+  white-space:nowrap;border-bottom:1px solid var(--brass);padding-bottom:3px;opacity:.8;transition:opacity .4s}
+.pillar:hover .pillar-cta{opacity:1}
+.pillar-media{position:relative;overflow:hidden;background:#0f1013 center/cover no-repeat;min-height:230px}
+.pillar-media video,.pillar-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.pillar-media video{transform:scale(1.04);filter:saturate(.9);transition:transform 1.3s var(--ease),filter 1.3s var(--ease)}
+.pillar:hover .pillar-media video{transform:scale(1);filter:saturate(1)}
+.pillar-media::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(90deg,rgba(20,21,24,.55),transparent 34%)}
+@media(max-width:760px){.pillar-media{min-height:200px}.pillar-media::after{background:linear-gradient(0deg,rgba(20,21,24,.5),transparent 40%)}}
+
+/* Stackwrite editorial card (lead, no screenshot) */
+.pillar.lead{grid-template-columns:1fr}
+.pillar.lead .pillar-body{min-height:auto}
+.sw-lines{border-top:1px solid var(--hair);margin-top:6px}
+.sw-lines a{display:flex;justify-content:space-between;align-items:baseline;gap:18px;
+  padding:16px 0;border-bottom:1px solid var(--hair);text-decoration:none}
+.sw-lines .t{font-family:var(--serif);font-weight:440;font-size:clamp(16px,1.9vw,21px);letter-spacing:-.01em;color:var(--paper)}
+.sw-lines a:hover .t{color:var(--brass)}
+.sw-lines .m{font-family:var(--mono);font-size:11px;letter-spacing:.06em;color:var(--dim);white-space:nowrap}
+
+/* Also — quiet strip for the off-hours stuff */
+.also{display:flex;flex-wrap:wrap;gap:10px 26px;align-items:baseline;padding-top:26px;border-top:1px solid var(--hair-2);margin-top:8px}
+.also .lab{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--dim)}
+.also a{font-size:14.5px;color:var(--paper);text-decoration:none;border-bottom:1px solid var(--hair);padding-bottom:2px;transition:border-color .4s}
+.also a:hover{border-color:var(--brass)}
+.also a .s{color:var(--dim);font-size:12.5px}
 
 /* Craft */
-.craft-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1px;
-  background:var(--hair-soft);border:1px solid var(--hair-soft);border-radius:18px;overflow:hidden}
-.craft{background:var(--ink);padding:30px 26px}
-.craft h3{font-family:var(--serif);font-weight:470;font-size:21px;margin-bottom:16px;letter-spacing:-.01em}
+.craft-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(238px,1fr));gap:1px;
+  background:var(--hair-2);border:1px solid var(--hair-2);border-radius:16px;overflow:hidden}
+.craft{background:var(--ink);padding:28px 24px}
+.craft h3{font-family:var(--serif);font-weight:470;font-size:20px;margin-bottom:15px;letter-spacing:-.01em}
 .craft .pills{display:flex;flex-wrap:wrap;gap:8px}
-.craft .pills span{font-family:var(--mono);font-size:11.5px;letter-spacing:.05em;color:var(--bone-dim);
-  border:1px solid var(--hair);border-radius:100px;padding:5px 12px}
+.craft .pills span{font-family:var(--mono);font-size:11.5px;color:var(--dim);border:1px solid var(--hair);border-radius:100px;padding:5px 11px}
 
-/* Timeline — film strip */
-.strip{border-left:1px solid var(--hair);margin-left:6px;padding-left:clamp(26px,4vw,46px);
-  display:flex;flex-direction:column;gap:clamp(44px,7vh,64px)}
+/* Timeline */
+.strip{border-left:1px solid var(--hair);margin-left:5px;padding-left:clamp(24px,4vw,44px);
+  display:flex;flex-direction:column;gap:clamp(40px,6.5vh,60px)}
 .job{position:relative}
-.job::before{content:"";position:absolute;left:calc(-1 * clamp(26px,4vw,46px) - 10.5px);top:8px;
-  width:9px;height:9px;border-radius:50%;background:var(--ink);border:2px solid var(--amber)}
-.job .date{font-family:var(--mono);font-size:11px;letter-spacing:.25em;color:var(--amber);text-transform:uppercase}
-.job h3{font-family:var(--serif);font-weight:470;font-size:clamp(21px,2.6vw,29px);margin:10px 0 4px;letter-spacing:-.01em}
-.job .co{color:var(--bone-dim);font-size:14.5px}
-.job p{color:var(--bone-dim);max-width:62ch;margin-top:10px;font-size:14.5px}
+.job::before{content:"";position:absolute;left:calc(-1 * clamp(24px,4vw,44px) - 10px);top:8px;
+  width:8px;height:8px;border-radius:50%;background:var(--ink);border:2px solid var(--brass)}
+.job .date{font-family:var(--mono);font-size:11px;letter-spacing:.22em;color:var(--brass);text-transform:uppercase}
+.job h3{font-family:var(--serif);font-weight:470;font-size:clamp(20px,2.5vw,28px);margin:9px 0 4px;letter-spacing:-.01em}
+.job .co{color:var(--dim);font-size:14.5px}
+.job p{color:var(--dim);max-width:62ch;margin-top:10px;font-size:14.5px}
 .job .awards{margin-top:12px;display:flex;flex-wrap:wrap;gap:8px}
-.job .awards span{font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;color:var(--amber);
-  border:1px solid rgba(228,169,60,.35);border-radius:100px;padding:4px 11px}
-.strip-meta{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;
-  margin-top:clamp(48px,7vh,72px)}
-.meta-card{border:1px solid var(--hair-soft);border-radius:16px;padding:24px}
-.meta-card .k{font-family:var(--mono);font-size:10.5px;letter-spacing:.3em;text-transform:uppercase;color:var(--bone-dim)}
-.meta-card .v{font-family:var(--serif);font-size:19px;font-weight:470;margin-top:10px}
-.meta-card .s{color:var(--bone-dim);font-size:13.5px;margin-top:4px}
+.job .awards span{font-family:var(--mono);font-size:10.5px;color:var(--brass);border:1px solid rgba(216,154,52,.34);border-radius:100px;padding:4px 11px}
+.strip-meta{display:grid;grid-template-columns:repeat(auto-fit,minmax(258px,1fr));gap:15px;margin-top:clamp(44px,6.5vh,66px)}
+.meta-card{border:1px solid var(--hair-2);border-radius:15px;padding:23px}
+.meta-card .k{font-family:var(--mono);font-size:10.5px;letter-spacing:.28em;text-transform:uppercase;color:var(--dim)}
+.meta-card .v{font-family:var(--serif);font-size:18px;font-weight:470;margin-top:9px}
+.meta-card .s{color:var(--dim);font-size:13.5px;margin-top:4px}
 
 /* Contact */
-.contact{text-align:left;padding-bottom:clamp(60px,8vh,100px)}
-.contact h2{font-family:var(--serif);font-weight:430;font-variation-settings:"opsz" 144;
-  font-size:clamp(44px,9vw,130px);line-height:1;letter-spacing:-.02em;margin-top:18px}
-.contact h2 a{text-decoration:none;font-style:italic;color:var(--amber);font-weight:340;
-  transition:opacity .4s}
+.contact{padding-bottom:clamp(56px,8vh,92px)}
+.contact h2{font-family:var(--serif);font-variation-settings:"opsz" 144;font-weight:400;
+  font-size:clamp(40px,8vw,116px);line-height:1.02;letter-spacing:-.025em;margin-top:16px}
+.contact h2 a{text-decoration:none;font-style:italic;color:var(--brass);font-weight:340;transition:opacity .4s}
 .contact h2 a:hover{opacity:.75}
-.contact .links{margin-top:clamp(36px,6vh,54px);display:flex;flex-wrap:wrap;gap:12px}
-.contact .links a{font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;
-  text-decoration:none;color:var(--bone);border:1px solid var(--hair);border-radius:100px;
-  padding:11px 22px;transition:border-color .4s var(--ease),background .4s var(--ease),color .4s}
-.contact .links a:hover{border-color:var(--amber);background:var(--amber);color:var(--ink)}
+.contact .links{margin-top:clamp(34px,5.5vh,50px);display:flex;flex-wrap:wrap;gap:11px}
+.contact .links a{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;
+  color:var(--paper);border:1px solid var(--hair);border-radius:100px;padding:11px 21px;
+  transition:border-color .4s var(--ease),background .4s var(--ease),color .4s}
+.contact .links a:hover{border-color:var(--brass);background:var(--brass);color:var(--ink)}
 
-/* Footer */
-footer{border-top:1px solid var(--hair-soft);padding:26px 0 34px}
+footer{border-top:1px solid var(--hair-2);padding:24px 0 32px}
 footer .frame{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;
-  font-family:var(--mono);font-size:11px;letter-spacing:.18em;color:var(--bone-dim);text-transform:uppercase}
+  font-family:var(--mono);font-size:11px;letter-spacing:.16em;color:var(--dim);text-transform:uppercase}
 
-/* Cursor (desktop) */
-.dot{position:fixed;z-index:90;width:6px;height:6px;border-radius:50%;background:var(--amber);
+.dot{position:fixed;z-index:90;width:6px;height:6px;border-radius:50%;background:var(--brass);
   pointer-events:none;transform:translate(-50%,-50%);transition:width .25s,height .25s,opacity .3s;opacity:0}
 @media(hover:none){.dot{display:none}}
 
 @media (prefers-reduced-motion: reduce){
   html{scroll-behavior:auto}
-  .grain,.leader-sweep{animation:none}
-  .leader{display:none}
-  .rv,.hero h1 .row>span,.hero-sub{opacity:1;transform:none;transition:none}
-  .hero-foot .scroll-cue::after{animation:none}
+  .rv,.hero h1 .ln>span,.hero-sub,.hero-stats{opacity:1;transform:none;transition:none}
   *{transition-duration:.01ms !important}
 }
 </style>
 </head>
 <body>
 
-<div class="leader" id="leader" aria-hidden="true">
-  <div class="leader-ring">
-    <div class="leader-sweep" id="sweep"></div>
-    <div class="leader-num" id="leaderNum">3</div>
-  </div>
-</div>
-
-<div class="grain" aria-hidden="true"></div>
-<div class="playhead" id="playhead" aria-hidden="true"></div>
+<div class="prog" id="prog" aria-hidden="true"></div>
 <div class="dot" id="dot" aria-hidden="true"></div>
 
 <nav class="nav">
   <a class="sig" href="#top">Hirak&nbsp;Banerjee</a>
-  <span class="tc" id="timecode">00:00:00:00</span>
+  <a class="to" href="mailto:hirak.b@hotmail.com">Get in touch</a>
 </nav>
 
-<div class="wrap" id="top">
+<div id="top">
 
 <!-- HERO -->
 <header class="hero" id="hero">
-  <div class="hero-bg" aria-hidden="true">
-    <video autoplay muted loop playsinline preload="metadata" poster="">
-      <source src="/videos/hero-silhouette.mp4" type="video/mp4">
-    </video>
-  </div>
   <div class="frame">
-    <p class="slate">Toronto · EST — Scene 00</p>
+    <p class="eyebrow">Toronto · Senior Quality Engineer</p>
     <h1>
-      <span class="row r1"><span>Quality engineer</span></span>
-      <span class="row r2"><span>by day.</span></span>
-      <span class="row r3"><span class="thin">Indie iOS dev</span></span>
-      <span class="row r4"><span class="thin">by night.</span></span>
+      <span class="ln l1"><span>I test what ships,</span></span>
+      <span class="ln l2"><span>build what I'd&nbsp;<em>use,</em></span></span>
+      <span class="ln l3"><span>and <em>write down</em> the rest.</span></span>
     </h1>
-    <div class="hero-sub">
-      <p>Thirteen years shipping enterprise software for banks and insurers.
-      Nights and weekends: apps on the App Store in 175 countries, a developer
-      publication, a short film, two singles.</p>
-      <span class="fact">13+ YRS ENTERPRISE<br>APPS IN 175 COUNTRIES<br>1 SHORT FILM · 2 SINGLES</span>
+    <p class="hero-sub">Senior Quality Engineer with <b>14 years</b> testing banking and insurance
+    software at scale. Off the clock I ship what I want to exist — <b>iOS apps in 175 countries</b>,
+    an open-source macOS tool, and a <b>developer reference that AI assistants now cite</b>.</p>
+    <div class="hero-stats">
+      <div>14 yrs<span>QE · banking &amp; insurance</span></div>
+      <div>175<span>countries · App Store</span></div>
+      <div>MIT<span>open source · macOS</span></div>
+      <div>Cited<span>by AI assistants</span></div>
     </div>
-  </div>
-  <div class="hero-foot">
-    <span class="scroll-cue">Scroll</span>
-    <span>REC ● LIVE</span>
   </div>
 </header>
 
-<!-- WORK -->
+<!-- WORK — three pillars -->
 <section id="work">
   <div class="frame">
     <div class="sec-head rv">
-      <p class="slate">SC.01 — Selected Work</p>
-      <h2>Things I ship <em>after hours.</em></h2>
+      <p class="eyebrow">Selected Work</p>
+      <h2>Three things I keep <em>coming back to.</em></h2>
     </div>
-    <div class="works">
+    <div class="pillars">
 
-      <a class="work rv" href="https://daydrop.beatroot.dev" target="_blank" rel="noopener noreferrer">
-        <div class="work-media"><video muted loop playsinline preload="none" poster="/videos/poster-daydrop.jpg" data-src="/videos/hero-daydrop.mp4"></video></div>
-        <span class="work-index">01 / 06</span>
-        <div class="work-body">
+      <!-- Stackwrite — lead, editorial -->
+      <div class="pillar lead rv">
+        <div class="pillar-body">
           <div>
-            <p class="work-role">iOS · Live on the App Store · 175 countries</p>
-            <p class="work-name">DayDrop</p>
-            <p class="work-desc">Countdown widgets for iPhone — AI-generated backgrounds, Dynamic Island Live Activities, Apple Watch. 4.7★ worldwide.</p>
+            <p class="pillar-kicker">Developer reference · cited by AI assistants</p>
+            <a href="https://stackwrite.com" target="_blank" rel="noopener noreferrer" class="pillar-name" style="display:inline-block">Stackwrite&nbsp;↗</a>
+            <p class="pillar-desc">A reference site for developer-tool pricing and free-tier limits —
+            every number verified against the source and re-checked monthly. When an assistant needs
+            current, checkable facts, it reads and cites whoever maintains them. That's the point.</p>
           </div>
-          <span class="work-cta">App Store ↗</span>
+          <div class="sw-lines">
+            <a href="https://stackwrite.com" target="_blank" rel="noopener noreferrer">
+              <span class="t">Best AI Code Editors in 2026 — Real Pricing, Real Limits</span><span class="m">verified monthly</span></a>
+            <a href="https://stackwrite.com" target="_blank" rel="noopener noreferrer">
+              <span class="t">Netlify Free Tier &amp; Pricing — The Real Limits</span><span class="m">hosting</span></a>
+            <a href="https://stackwrite.com" target="_blank" rel="noopener noreferrer">
+              <span class="t">PlanetScale Pricing — What You Actually Pay</span><span class="m">databases</span></a>
+          </div>
+          <div class="pillar-foot">
+            <div class="pillar-tags"><span>Technical writing</span><span>GEO / SEO</span><span>Verified sources</span></div>
+            <span class="pillar-cta">Read Stackwrite ↗</span>
+          </div>
         </div>
+      </div>
+
+      <!-- DayDrop -->
+      <a class="pillar rv" href="https://daydrop.beatroot.dev" target="_blank" rel="noopener noreferrer">
+        <div class="pillar-body">
+          <div>
+            <p class="pillar-kicker">iOS · Live on the App Store · 175 countries</p>
+            <p class="pillar-name">DayDrop</p>
+            <p class="pillar-desc">Countdown widgets for iPhone — AI-generated event backgrounds,
+            Dynamic Island Live Activities, Apple Watch. Built solo, 4.7★ worldwide.</p>
+          </div>
+          <div class="pillar-foot">
+            <div class="pillar-tags"><span>Swift</span><span>SwiftUI</span><span>WidgetKit</span><span>ActivityKit</span></div>
+            <span class="pillar-cta">App Store ↗</span>
+          </div>
+        </div>
+        <div class="pillar-media"><video muted loop playsinline preload="none" poster="/videos/poster-daydrop.jpg" data-src="/videos/hero-daydrop.mp4"></video></div>
       </a>
 
-      <a class="work rv" href="https://swiftgenai.dev" target="_blank" rel="noopener noreferrer">
-        <div class="work-media"><video muted loop playsinline preload="none" poster="/videos/poster-swiftgenai.jpg" data-src="/videos/hero-swiftgenai.mp4"></video></div>
-        <span class="work-index">02 / 06</span>
-        <div class="work-body">
+      <!-- RadioWave -->
+      <a class="pillar rv" href="https://github.com/hirakcoder/RadioWave" target="_blank" rel="noopener noreferrer">
+        <div class="pillar-body">
           <div>
-            <p class="work-role">iOS · In development</p>
-            <p class="work-name">SwiftGenAI</p>
-            <p class="work-desc">Build iOS apps from plain English — AI prototyping that turns natural language into SwiftUI.</p>
+            <p class="pillar-kicker">Open source · macOS · MIT</p>
+            <p class="pillar-name">RadioWave</p>
+            <p class="pillar-desc">Hear your AI think. A macOS menubar app that turns Claude Code activity
+            into procedural radio audio — thinking hums, tools pulse, static crackles between sessions.
+            All synthesized in real time, no samples.</p>
           </div>
-          <span class="work-cta">Visit ↗</span>
+          <div class="pillar-foot">
+            <div class="pillar-tags"><span>Swift</span><span>AVAudioEngine</span><span>Claude Code hooks</span><span>Canvas</span></div>
+            <span class="pillar-cta">GitHub ↗</span>
+          </div>
         </div>
+        <div class="pillar-media"><img src="/img/radiowave.jpg" alt="RadioWave — macOS menubar app with ON AIR waveform" loading="lazy"></div>
       </a>
 
-      <a class="work rv" href="https://stackwrite.com" target="_blank" rel="noopener noreferrer">
-        <div class="work-media"><video muted loop playsinline preload="none" poster="/videos/poster-stackwrite.jpg" data-src="/videos/hero-stackwrite.mp4"></video></div>
-        <span class="work-index">03 / 06</span>
-        <div class="work-body">
-          <div>
-            <p class="work-role">Publication · cited by AI assistants</p>
-            <p class="work-name">Stackwrite</p>
-            <p class="work-desc">A developer-tools reference site — verified pricing and limits, re-checked monthly.</p>
-          </div>
-          <span class="work-cta">Read ↗</span>
-        </div>
-      </a>
+    </div>
 
-      <a class="work rv" href="#" tabindex="-1" style="pointer-events:none">
-        <div class="work-media"><video muted loop playsinline preload="none" poster="/videos/poster-film.jpg" data-src="/videos/hero-film.mp4"></video></div>
-        <span class="work-index">04 / 06</span>
-        <div class="work-body">
-          <div>
-            <p class="work-role">Writer · Director · Editor</p>
-            <p class="work-name">Short Film</p>
-            <p class="work-desc">Written, directed and edited solo. Graded in DaVinci Resolve. Festival submission.</p>
-          </div>
-          <span class="work-cta">Coming soon</span>
-        </div>
-      </a>
-
-      <a class="work rv" href="https://youtube.com/@footballmemesai" target="_blank" rel="noopener noreferrer">
-        <div class="work-media"><video muted loop playsinline preload="none" poster="/videos/poster-youtube.jpg" data-src="/videos/hero-youtube.mp4"></video></div>
-        <span class="work-index">05 / 06</span>
-        <div class="work-body">
-          <div>
-            <p class="work-role">YouTube · 1,800 subs in 2 months</p>
-            <p class="work-name">FootballMemesAI</p>
-            <p class="work-desc">AI-generated football meme channel — workflow, voice and edit pipeline built from zero.</p>
-          </div>
-          <span class="work-cta">Watch ↗</span>
-        </div>
-      </a>
-
-      <a class="work rv" href="https://linktr.ee/hirak10" target="_blank" rel="noopener noreferrer">
-        <div class="work-media"><video muted loop playsinline preload="none" poster="/videos/poster-music.jpg" data-src="/videos/hero-music.mp4"></video></div>
-        <span class="work-index">06 / 06</span>
-        <div class="work-body">
-          <div>
-            <p class="work-role">Composer · Producer · 2 singles</p>
-            <p class="work-name">Original Music</p>
-            <p class="work-desc">Composed and produced in FL Studio, distributed to streaming platforms.</p>
-          </div>
-          <span class="work-cta">Listen ↗</span>
-        </div>
-      </a>
-
+    <!-- Also (quiet) -->
+    <div class="also rv">
+      <span class="lab">Also, off the clock</span>
+      <a href="https://youtube.com/@footballmemesai" target="_blank" rel="noopener noreferrer">FootballMemesAI <span class="s">— YouTube, 1.8K subs</span></a>
+      <a href="https://linktr.ee/hirak10" target="_blank" rel="noopener noreferrer">Original music <span class="s">— 2 singles</span></a>
     </div>
   </div>
 </section>
@@ -359,14 +296,14 @@ footer .frame{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px
 <section id="craft">
   <div class="frame">
     <div class="sec-head rv">
-      <p class="slate">SC.02 — Craft</p>
-      <h2>The toolkit, <em>sharpened daily.</em></h2>
+      <p class="eyebrow">What I work in</p>
+      <h2>The toolkit, <em>day and night.</em></h2>
     </div>
     <div class="craft-grid rv d1">
-      <div class="craft"><h3>Test Automation</h3><div class="pills"><span>Java</span><span>Selenium</span><span>Cucumber</span><span>REST Assured</span><span>XCUITest</span></div></div>
-      <div class="craft"><h3>iOS Development</h3><div class="pills"><span>Swift</span><span>SwiftUI</span><span>WidgetKit</span><span>ActivityKit</span></div></div>
-      <div class="craft"><h3>AI &amp; Automation</h3><div class="pills"><span>Claude Code</span><span>AI Agents</span><span>MCP Servers</span></div></div>
-      <div class="craft"><h3>Video &amp; Audio</h3><div class="pills"><span>DaVinci Resolve</span><span>CapCut</span><span>FL Studio</span></div></div>
+      <div class="craft"><h3>Quality Engineering</h3><div class="pills"><span>Java</span><span>Selenium</span><span>Cucumber</span><span>REST Assured</span><span>XCUITest</span><span>Jenkins CI/CD</span></div></div>
+      <div class="craft"><h3>iOS &amp; macOS</h3><div class="pills"><span>Swift</span><span>SwiftUI</span><span>WidgetKit</span><span>ActivityKit</span><span>AVAudioEngine</span></div></div>
+      <div class="craft"><h3>AI &amp; Automation</h3><div class="pills"><span>Claude Code</span><span>AI Agents</span><span>MCP Servers</span><span>Hooks</span></div></div>
+      <div class="craft"><h3>Technical Writing</h3><div class="pills"><span>Developer reference</span><span>GEO / SEO</span><span>Source verification</span></div></div>
     </div>
   </div>
 </section>
@@ -375,8 +312,8 @@ footer .frame{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px
 <section id="timeline">
   <div class="frame">
     <div class="sec-head rv">
-      <p class="slate">SC.03 — The Long Take</p>
-      <h2>Fourteen years, <em>one continuous shot.</em></h2>
+      <p class="eyebrow">The Day Job</p>
+      <h2>Fourteen years of <em>making software behave.</em></h2>
     </div>
     <div class="strip">
       <div class="job rv">
@@ -409,14 +346,13 @@ footer .frame{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px
 <!-- CONTACT -->
 <section class="contact" id="contact">
   <div class="frame">
-    <p class="slate rv">SC.04 — Final Frame</p>
-    <h2 class="rv d1">Got something worth building?<br><a href="mailto:hirak.b@hotmail.com">Roll&nbsp;camera&nbsp;→</a></h2>
+    <p class="eyebrow rv">Get in touch</p>
+    <h2 class="rv d1">Building something that has to work?<br><a href="mailto:hirak.b@hotmail.com">Let's talk&nbsp;→</a></h2>
     <div class="links rv d2">
       <a href="mailto:hirak.b@hotmail.com">Email</a>
       <a href="https://linkedin.com/in/hirak-banerjee-906aa940/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
       <a href="https://github.com/hirakcoder" target="_blank" rel="noopener noreferrer">GitHub</a>
       <a href="https://x.com/hirak8" target="_blank" rel="noopener noreferrer">X</a>
-      <a href="https://youtube.com/channel/UCMacTlcyy0TRgce7cnWdASw" target="_blank" rel="noopener noreferrer">YouTube</a>
     </div>
   </div>
 </section>
@@ -424,7 +360,7 @@ footer .frame{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px
 <footer>
   <div class="frame">
     <span>© 2026 Hirak Banerjee</span>
-    <span>Cut on location in Toronto</span>
+    <span>Toronto</span>
   </div>
 </footer>
 
@@ -432,64 +368,32 @@ footer .frame{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px
 
 <script>
 (function(){
-  var reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var hero=document.getElementById('hero');
+  requestAnimationFrame(function(){hero.classList.add('on');});
 
-  /* Film-leader countdown: 3-2-1, sweep, then reveal hero */
-  var leader=document.getElementById('leader'),num=document.getElementById('leaderNum'),
-      sweep=document.getElementById('sweep'),hero=document.getElementById('hero');
-  var revealed=false;
-  function reveal(){if(revealed)return;revealed=true;leader.classList.add('done');hero.classList.add('on');}
-  setTimeout(reveal,2600); // hard safety: never trap a visitor if rAF throttles
-  if(reduced){reveal();}
-  else{
-    var n=3,t0=performance.now(),per=380;
-    (function tick(now){
-      var el=now-t0,phase=Math.min(el/per,1);
-      sweep.style.setProperty('--sweep',(phase*360)+'deg');
-      if(phase>=1){n--;if(n<1){reveal();return;}num.textContent=n;t0=now;}
-      requestAnimationFrame(tick);
-    })(t0);
-  }
-
-  /* Live timecode HH:MM:SS:FF */
-  var tc=document.getElementById('timecode');
-  setInterval(function(){
-    var d=new Date(),p=function(x){return String(x).padStart(2,'0')};
-    tc.textContent=p(d.getHours())+':'+p(d.getMinutes())+':'+p(d.getSeconds())+':'+p(Math.floor(d.getMilliseconds()/41.7)%24);
-  },42);
-
-  /* Playhead scroll progress */
-  var ph=document.getElementById('playhead');
+  var prog=document.getElementById('prog');
   addEventListener('scroll',function(){
     var h=document.documentElement,max=h.scrollHeight-h.clientHeight;
-    ph.style.transform='scaleX('+(max?h.scrollTop/max:0)+')';
+    prog.style.transform='scaleX('+(max?h.scrollTop/max:0)+')';
   },{passive:true});
 
-  /* Reveal on scroll */
   var io=new IntersectionObserver(function(es){
     es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target);}});
-  },{threshold:.18,rootMargin:'0px 0px -6% 0px'});
+  },{threshold:.16,rootMargin:'0px 0px -5% 0px'});
   document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
 
-  /* Lazy project videos: load + play when near viewport, pause off-screen */
   var vio=new IntersectionObserver(function(es){
-    es.forEach(function(e){
-      var v=e.target;
-      if(e.isIntersecting){
-        if(!v.src&&v.dataset.src){v.src=v.dataset.src;}
-        v.play&&v.play().catch(function(){});
-      } else { v.pause&&v.pause(); }
-    });
-  },{rootMargin:'220px 0px'});
-  document.querySelectorAll('.work-media video').forEach(function(v){vio.observe(v)});
+    es.forEach(function(e){var v=e.target;
+      if(e.isIntersecting){if(!v.src&&v.dataset.src)v.src=v.dataset.src;v.play&&v.play().catch(function(){});}
+      else{v.pause&&v.pause();}});
+  },{rootMargin:'200px 0px'});
+  document.querySelectorAll('.pillar-media video').forEach(function(v){vio.observe(v)});
 
-  /* Cursor dot (desktop) */
   var dot=document.getElementById('dot');
   if(matchMedia('(hover:hover)').matches&&!reduced){
-    addEventListener('mousemove',function(e){
-      dot.style.opacity=1;dot.style.left=e.clientX+'px';dot.style.top=e.clientY+'px';
-    },{passive:true});
-    document.querySelectorAll('a').forEach(function(a){
+    addEventListener('mousemove',function(e){dot.style.opacity=1;dot.style.left=e.clientX+'px';dot.style.top=e.clientY+'px';},{passive:true});
+    document.querySelectorAll('a,.pillar').forEach(function(a){
       a.addEventListener('mouseenter',function(){dot.style.width='26px';dot.style.height='26px';dot.style.opacity=.5;});
       a.addEventListener('mouseleave',function(){dot.style.width='6px';dot.style.height='6px';dot.style.opacity=1;});
     });
