@@ -3,21 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hirak Banerjee — AI-Augmented Quality Engineer</title>
-<meta name="description" content="Hirak Banerjee — Senior Quality Engineer with 14 years in banking, payments, insurance and wealth. Builds AI into how software gets tested, and verifies what AI builds: LLM-powered test tooling at a Big-5 bank, a measured multi-agent iOS app generator, and apps live in 175 countries.">
+<title>Hirak Banerjee — Quality Engineer</title>
+<meta name="description" content="Hirak Banerjee, Senior Quality Engineer. 14 years in banking, payments, insurance and wealth. Builds AI into how software gets tested and verifies what AI builds: LLM test tooling at a Big-5 bank, a measured multi-agent iOS app generator, apps live in 175 countries.">
 <link rel="canonical" href="https://hirakcoder.github.io/">
-<meta property="og:title" content="Hirak Banerjee — AI-Augmented Quality Engineer">
-<meta property="og:description" content="I build AI into how software gets tested — and verify what AI builds. 14 years of QE in banking, payments, insurance and wealth.">
+<meta property="og:title" content="Hirak Banerjee — Quality Engineer">
+<meta property="og:description" content="I build AI into how software gets tested, and verify what AI builds. 14 years of QE in banking, payments, insurance and wealth.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://hirakcoder.github.io/">
 <meta property="og:image" content="https://hirakcoder.github.io/og-image.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="theme-color" content="#0C0D0F">
+<meta name="theme-color" content="#EFECE4">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,300..900;1,62..125,300..900&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Person","name":"Hirak Banerjee",
+{"@context":"https://schema.org","@type":"Person","name":"Hirak Banerjee","image":"https://hirakcoder.github.io/img/v4/hirak.jpg",
  "jobTitle":"Senior Software Quality Engineer — AI-Augmented Testing",
  "address":{"@type":"PostalAddress","addressRegion":"Ontario","addressCountry":"CA"},
  "alumniOf":"National Institute of Technology, Agartala","url":"https://hirakcoder.github.io/",
@@ -26,570 +26,501 @@
 </script>
 <style>
 :root{
-  --ink:#0C0D0F; --ink-2:#131417; --ink-3:#191A1E; --paper:#F4F2EC; --dim:#8E8D86; --dim-2:#6C6B66;
-  --brass:#D89A34; --brass-soft:rgba(216,154,52,.14); --rose:#E0795E;
-  --hair:rgba(244,242,236,0.12); --hair-2:rgba(244,242,236,0.06);
-  --serif:"Fraunces",Georgia,serif; --mono:"IBM Plex Mono",ui-monospace,monospace;
-  --sans:-apple-system,BlinkMacSystemFont,"Helvetica Neue",Segoe UI,sans-serif;
-  --ease:cubic-bezier(0.16,1,0.3,1);
+  --paper:#EFECE4; --ink:#121212; --mute:#5F5C55; --faint:#8C887F; --rule:#121212; --soft:rgba(18,18,18,.14);
+  --mark:#0E7A45; --hi:#E9E3D2;
+  --sans:"Archivo",system-ui,sans-serif; --mono:"IBM Plex Mono",ui-monospace,monospace;
 }
-body[data-mode="creative"]{--brass:#E0795E; --brass-soft:rgba(224,121,94,.14)}
+body.creative{--paper:#101010; --ink:#EFECE4; --mute:#A39F95; --faint:#77736B; --rule:#EFECE4; --soft:rgba(239,236,228,.16); --mark:#FF7A59; --hi:#1B1B1B}
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{background:var(--ink);color:var(--paper);font-family:var(--sans);font-size:16px;line-height:1.6;
-  overflow-x:hidden;-webkit-font-smoothing:antialiased;transition:background .6s var(--ease)}
-::selection{background:var(--brass);color:var(--ink)}
-a{color:inherit}
-img,video{max-width:100%;display:block}
-.frame{max-width:1160px;margin:0 auto;padding:0 clamp(16px,4vw,44px)}
-.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:var(--dim);
-  display:flex;align-items:center;gap:14px}
-.eyebrow::before{content:"";width:28px;height:1px;background:var(--brass);flex:none}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-variation-settings:"wdth" 100;font-size:17px;line-height:1.55;
+  -webkit-font-smoothing:antialiased;transition:background .5s ease,color .5s ease}
+::selection{background:var(--ink);color:var(--paper)}
+a{color:inherit;text-decoration-thickness:1px;text-underline-offset:3px}
+img{display:block;max-width:100%;height:auto}
+.w{max-width:1240px;margin:0 auto;padding:0 clamp(16px,3.4vw,40px)}
+.mono{font-family:var(--mono);font-size:12px;letter-spacing:.02em}
 
-/* progress */
-.prog{position:fixed;top:0;left:0;height:2px;width:100%;z-index:70;transform-origin:0 50%;background:var(--brass);transform:scaleX(0)}
+/* ---------- running head ---------- */
+.head{position:sticky;top:0;z-index:40;background:var(--paper);border-bottom:1px solid var(--rule);transition:background .5s}
+.head .w{display:flex;justify-content:space-between;align-items:center;gap:12px;height:48px}
+.head .who{font-family:var(--mono);font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.head .who b{font-weight:500}
+.toggle{display:flex;border:1px solid var(--rule);flex:none}
+.toggle button{border:0;background:none;color:var(--ink);cursor:pointer;font-family:var(--mono);font-size:12px;padding:6px 12px;transition:background .3s,color .3s}
+.toggle button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+@media(max-width:560px){.head .who .opt{display:none}}
 
-/* nav — solid glass so content never collides with it */
-.nav{position:fixed;top:0;left:0;right:0;z-index:60;background:rgba(12,13,15,.72);
-  backdrop-filter:saturate(1.4) blur(14px);-webkit-backdrop-filter:saturate(1.4) blur(14px);
-  border-bottom:1px solid var(--hair-2)}
-.nav .frame{display:flex;align-items:center;justify-content:space-between;gap:14px;height:62px}
-.sig{font-family:var(--serif);font-weight:500;font-size:18px;letter-spacing:-.01em;text-decoration:none;white-space:nowrap}
-.nav-r{display:flex;align-items:center;gap:18px}
-.nav-link{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;color:var(--dim);transition:color .3s}
-.nav-link:hover{color:var(--paper)}
-@media(max-width:640px){.nav-link.opt{display:none}}
+/* ---------- side visibility ---------- */
+.side{display:none}
+body:not(.creative) .side.eng, body.creative .side.cre{display:block}
 
-/* the mode switch */
-.switch{position:relative;display:inline-grid;grid-template-columns:1fr 1fr;border:1px solid var(--hair);
-  border-radius:100px;padding:3px;background:var(--ink-2)}
-.switch button{position:relative;z-index:1;border:0;background:none;color:var(--dim);cursor:pointer;
-  font-family:var(--mono);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;padding:7px 13px;border-radius:100px;transition:color .35s}
-.switch button[aria-pressed="true"]{color:var(--ink)}
-.switch .knob{position:absolute;top:3px;bottom:3px;left:3px;width:calc(50% - 3px);border-radius:100px;background:var(--brass);
-  transition:transform .5s var(--ease),background .5s}
-body[data-mode="creative"] .switch .knob{transform:translateX(100%)}
+/* ---------- hero ---------- */
+.hero{padding:clamp(40px,7vh,84px) 0 0}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:clamp(24px,4vw,56px);align-items:end}
+@media(max-width:860px){.hero-grid{grid-template-columns:1fr}}
+.kicker{font-family:var(--mono);font-size:12px;color:var(--mute);margin-bottom:22px}
+.kicker b{color:var(--ink);font-weight:500}
+h1{font-weight:800;font-variation-settings:"wdth" 64;text-transform:uppercase;letter-spacing:-.012em;
+  font-size:clamp(46px,9.2vw,142px);line-height:.86}
+h1 .lite{display:block;font-weight:300;font-style:italic;text-transform:none;font-variation-settings:"wdth" 88;letter-spacing:-.02em;
+  font-size:.52em;line-height:1.05;margin-top:.3em;color:var(--ink)}
+h1 .lite u{text-decoration-color:var(--mark);text-decoration-thickness:.07em;text-underline-offset:.12em}
+.fig img{width:100%;height:auto;aspect-ratio:1;object-fit:cover;filter:grayscale(1) contrast(1.05);transition:filter .6s}
+.fig:hover img{filter:none}
+.fig figcaption{font-family:var(--mono);font-size:11.5px;color:var(--mute);margin-top:8px;display:flex;justify-content:space-between;gap:8px}
+@media(max-width:860px){.fig{max-width:220px}}
 
-/* mode visibility */
-[data-for]{display:none}
-body[data-mode="engineer"] [data-for="engineer"],body[data-mode="creative"] [data-for="creative"]{display:block}
-.fade-in{animation:fin .7s var(--ease)}
-@keyframes fin{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.lede{margin-top:clamp(28px,4vh,44px);max-width:760px;font-size:clamp(18px,1.8vw,22px);line-height:1.45}
+.lede b{font-weight:650}
 
-/* hero */
-.hero{min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding:118px 0 70px;position:relative;overflow:hidden}
-.hero h1{font-family:var(--serif);font-variation-settings:"opsz" 144;font-weight:420;font-size:clamp(36px,6.8vw,96px);
-  line-height:1.04;letter-spacing:-.02em;margin-top:22px;max-width:16ch}
-.hero h1 em{font-style:italic;font-weight:330;color:var(--brass)}
-.hero-sub{margin-top:30px;max-width:64ch;color:var(--dim);font-size:clamp(15px,1.6vw,18.5px)}
-.hero-sub b{color:var(--paper);font-weight:500}
-.proof{margin-top:40px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:var(--hair-2);
-  border:1px solid var(--hair-2);border-radius:16px;overflow:hidden;max-width:980px}
-@media(max-width:760px){.proof{grid-template-columns:repeat(2,minmax(0,1fr))}}
-.proof div{background:var(--ink);padding:18px 18px 16px}
-.proof .n{font-family:var(--serif);font-size:clamp(24px,3vw,34px);font-weight:430;letter-spacing:-.02em;line-height:1}
-.proof .n small{font-size:.5em;color:var(--dim);margin-left:3px}
-.proof .l{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);margin-top:10px;line-height:1.45}
-.proof .live{display:inline-flex;align-items:center;gap:6px;font-family:var(--mono);font-size:9.5px;letter-spacing:.18em;color:var(--brass);margin-top:8px;text-transform:uppercase}
-.proof .live::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--brass);box-shadow:0 0 0 0 var(--brass);animation:pulse 2s infinite}
-@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(216,154,52,.6)}70%{box-shadow:0 0 0 8px rgba(216,154,52,0)}100%{box-shadow:0 0 0 0 rgba(216,154,52,0)}}
-.hero-note{margin-top:16px;font-family:var(--mono);font-size:11px;color:var(--dim-2);letter-spacing:.04em}
-.hero-cta{margin-top:34px;display:flex;flex-wrap:wrap;gap:10px}
-.btn{font-family:var(--mono);font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;text-decoration:none;
-  border:1px solid var(--hair);border-radius:100px;padding:12px 20px;transition:all .35s var(--ease);display:inline-flex;gap:8px;align-items:center}
-.btn.solid{background:var(--brass);border-color:var(--brass);color:var(--ink)}
-.btn:hover{border-color:var(--brass)}
-.btn.solid:hover{filter:brightness(1.08)}
+/* summary table */
+.summary{margin-top:clamp(30px,5vh,52px);display:grid;grid-template-columns:repeat(5,minmax(0,1fr));border-top:2px solid var(--rule);border-bottom:1px solid var(--rule)}
+@media(max-width:860px){.summary{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.summary div{padding:12px 14px 14px 0}
+.summary div+div{padding-left:14px;border-left:1px solid var(--soft)}
+@media(max-width:860px){.summary div{padding-left:0!important;border-left:0!important;border-top:1px solid var(--soft)}}
+.summary dt{font-family:var(--mono);font-size:11px;color:var(--mute);text-transform:uppercase;letter-spacing:.06em}
+.summary dd{font-weight:800;font-variation-settings:"wdth" 70;font-size:clamp(28px,3.4vw,44px);line-height:1;margin-top:8px}
+.summary dd small{font-size:.42em;font-weight:500;font-variation-settings:"wdth" 100;margin-left:4px;color:var(--mute)}
+.summary.four{grid-template-columns:repeat(4,minmax(0,1fr))}
+@media(max-width:860px){.summary.four{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.summary .note{font-size:13px;color:var(--mute);margin-top:6px;line-height:1.35}
 
-/* creative hero video */
-.hero-video{position:absolute;inset:0;z-index:-1}
-.hero-video video{width:100%;height:100%;object-fit:cover;opacity:.28;filter:saturate(.8)}
-.hero-video::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(12,13,15,.4),var(--ink) 92%)}
+/* grid children must be allowed to shrink (prevents horizontal overflow on phones) */
+.hero-grid>*,.proj .body>*,.sec>*,.row>*,.track>*,.cv .item>*{min-width:0}
+.strip{max-width:100%}
 
-/* sections */
-section{padding:clamp(76px,10vh,128px) 0;position:relative}
-.sec-head{margin-bottom:clamp(34px,5vh,58px);max-width:780px}
-.sec-head h2{font-family:var(--serif);font-variation-settings:"opsz" 90;font-weight:400;font-size:clamp(30px,4.6vw,58px);
-  line-height:1.08;letter-spacing:-.02em;margin-top:14px}
-.sec-head h2 em{font-style:italic;color:var(--brass);font-weight:330}
-.sec-head p{color:var(--dim);margin-top:14px;max-width:60ch}
-.rv{opacity:0;transform:translateY(24px);transition:opacity .85s var(--ease),transform .85s var(--ease)}
-.rv.on{opacity:1;transform:none}
+/* ---------- report sections ---------- */
+.sec{border-top:1px solid var(--rule);margin-top:clamp(64px,10vh,110px);padding-top:18px;display:grid;grid-template-columns:200px minmax(0,1fr);gap:clamp(16px,3vw,40px)}
+@media(max-width:860px){.sec{grid-template-columns:1fr;gap:10px}}
+.sec > .lab{font-family:var(--mono);font-size:12px;color:var(--mute);line-height:1.5}
+.sec > .lab b{display:block;color:var(--ink);font-weight:500;font-size:13px}
+h2{font-weight:800;font-variation-settings:"wdth" 72;font-size:clamp(30px,4.4vw,58px);line-height:.98;letter-spacing:-.01em;text-transform:uppercase;max-width:19ch;hyphens:none}
+.intro{margin-top:16px;max-width:66ch;color:var(--mute)}
+.intro b{color:var(--ink);font-weight:600}
 
-/* uniform card system: kicker → name → claim → proof → links */
-.card{border:1px solid var(--hair-2);border-radius:18px;background:var(--ink-2);overflow:hidden;
-  transition:border-color .5s var(--ease),transform .6s var(--ease)}
-.card:hover{border-color:var(--hair)}
-.card-body{padding:clamp(22px,3vw,38px)}
-.kicker{font-family:var(--mono);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--brass)}
-.name{font-family:var(--serif);font-weight:470;font-size:clamp(26px,3.2vw,40px);letter-spacing:-.02em;line-height:1.04;margin:12px 0 10px}
-.claim{color:var(--dim);font-size:15.5px;max-width:62ch}
-.claim b{color:var(--paper);font-weight:500}
-.tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:18px}
-.tags span{font-family:var(--mono);font-size:10.5px;color:var(--dim);border:1px solid var(--hair);border-radius:100px;padding:4px 10px}
-.links{display:flex;flex-wrap:wrap;gap:18px;margin-top:20px}
-.links a{font-family:var(--mono);font-size:11px;letter-spacing:.15em;text-transform:uppercase;text-decoration:none;border-bottom:1px solid var(--brass);padding-bottom:3px}
+/* rows (no cards) */
+.rows{margin-top:28px;border-top:1px solid var(--rule)}
+.row{display:grid;grid-template-columns:70px minmax(0,1fr) 210px;gap:18px;padding:20px 0;border-bottom:1px solid var(--soft)}
+@media(max-width:760px){.row{grid-template-columns:48px minmax(0,1fr)}.row .meta{grid-column:2}}
+.row .id{font-family:var(--mono);font-size:12px;color:var(--mute);padding-top:4px}
+.row h3{font-weight:700;font-variation-settings:"wdth" 90;font-size:21px;line-height:1.2}
+.row p{color:var(--mute);margin-top:6px;max-width:64ch;font-size:16px}
+.row .meta{font-family:var(--mono);font-size:11.5px;color:var(--ink);padding-top:5px}
+.row .meta i{font-style:normal;color:var(--mark)}
+.fine{font-family:var(--mono);font-size:11.5px;color:var(--faint);margin-top:12px}
 
-/* bank tools */
-.tools{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
-@media(max-width:900px){.tools{grid-template-columns:1fr}}
-.tool .num{font-family:var(--mono);font-size:11px;color:var(--dim-2);letter-spacing:.2em}
-.tool h3{font-family:var(--serif);font-weight:460;font-size:22px;letter-spacing:-.01em;margin:10px 0 10px;line-height:1.2}
-.tool p{color:var(--dim);font-size:14.5px}
-.tool .ai{display:inline-block;margin-top:16px;font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;
-  color:var(--brass);background:var(--brass-soft);border-radius:100px;padding:5px 11px}
-.fine{margin-top:18px;font-family:var(--mono);font-size:11px;color:var(--dim-2);letter-spacing:.03em}
+/* project block */
+.proj{margin-top:34px}
+.proj + .proj{margin-top:clamp(56px,8vh,84px);padding-top:26px;border-top:1px solid var(--soft)}
+.proj-h{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:8px 20px}
+.proj-h h3{font-weight:800;font-variation-settings:"wdth" 75;font-size:clamp(32px,4vw,52px);line-height:1;text-transform:uppercase}
+.proj-h .tagline{font-family:var(--mono);font-size:12px;color:var(--mute)}
+.proj .body{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:clamp(20px,3.4vw,48px);margin-top:18px}
+@media(max-width:900px){.proj .body{grid-template-columns:1fr}}
+.proj .body p{max-width:62ch}
+.proj .body p + p{margin-top:12px}
+.proj .body p b{font-weight:650}
+.links{margin-top:16px;display:flex;flex-wrap:wrap;gap:6px 22px;font-family:var(--mono);font-size:12.5px}
 
-/* flagship: SwiftGen */
-.flag .card-body{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(22px,4vw,48px)}
-@media(max-width:900px){.flag .card-body{grid-template-columns:1fr}}
-.pipe{list-style:none;counter-reset:s;margin-top:22px;display:flex;flex-direction:column;gap:0}
-.pipe li{counter-increment:s;position:relative;padding:0 0 16px 38px;color:var(--dim);font-size:14px;line-height:1.5}
-.pipe li::before{content:counter(s,decimal-leading-zero);position:absolute;left:0;top:1px;font-family:var(--mono);font-size:10.5px;color:var(--brass)}
-.pipe li::after{content:"";position:absolute;left:8px;top:20px;bottom:2px;width:1px;background:var(--hair)}
-.pipe li:last-child::after{display:none}
-.pipe li b{color:var(--paper);font-weight:500}
-.pipe .gate{display:inline-block;font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);
-  background:var(--brass);border-radius:4px;padding:1px 6px;margin-left:6px;vertical-align:1px}
-.metrics{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--hair-2);border:1px solid var(--hair-2);border-radius:14px;overflow:hidden;align-self:start}
-.metrics div{background:var(--ink);padding:18px}
-.metrics .n{font-family:var(--serif);font-size:clamp(28px,3.4vw,40px);font-weight:420;letter-spacing:-.02em;line-height:1}
-.metrics .l{font-size:12.5px;color:var(--dim);margin-top:8px;line-height:1.4}
-.metrics .wide{grid-column:1/-1}
-.caveat{margin-top:14px;font-size:12.5px;color:var(--dim-2);line-height:1.55}
-.caveat b{color:var(--dim);font-weight:500}
+/* steps */
+.steps{list-style:none;margin-top:18px;border-top:1px solid var(--rule)}
+.steps li{display:grid;grid-template-columns:34px minmax(0,1fr) auto;gap:10px;padding:10px 0;border-bottom:1px solid var(--soft);font-size:15px}
+.steps .n{font-family:var(--mono);font-size:11.5px;color:var(--mute);padding-top:3px}
+.steps b{font-weight:650}
+.steps .g{font-family:var(--mono);font-size:10.5px;color:var(--mark);border:1px solid var(--mark);padding:1px 6px;height:max-content;margin-top:2px;text-transform:uppercase}
 
-/* project grid */
-.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:14px}
-@media(max-width:900px){.grid2{grid-template-columns:1fr}}
-.media{position:relative;aspect-ratio:16/8;background:#0f1013 center/cover no-repeat;overflow:hidden;border-bottom:1px solid var(--hair-2)}
-.media video,.media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.media::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(19,20,23,.55),transparent 45%)}
-.agents{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-top:16px}
-.agents span{font-family:var(--mono);font-size:10.5px;border:1px solid var(--hair);border-radius:6px;padding:4px 8px;color:var(--paper)}
-.agents i{color:var(--dim-2);font-style:normal;font-size:11px}
-.agents span.g{border-color:var(--brass);color:var(--brass)}
+/* results table */
+table.res{width:100%;border-collapse:collapse;font-size:15px}
+table.res caption{text-align:left;font-family:var(--mono);font-size:11.5px;color:var(--mute);padding-bottom:8px}
+table.res th{font-family:var(--mono);font-weight:400;font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--mute);text-align:left;border-bottom:2px solid var(--rule);padding:6px 8px 6px 0}
+table.res td{border-bottom:1px solid var(--soft);padding:10px 8px 10px 0;vertical-align:top}
+table.res td.v{font-weight:800;font-variation-settings:"wdth" 72;font-size:26px;line-height:1;white-space:nowrap}
+table.res td.b{color:var(--mute);font-size:13.5px}
+.caveat{margin-top:12px;font-size:13.5px;color:var(--mute);border-left:2px solid var(--mark);padding-left:12px}
 
-/* principle */
-.principles{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:var(--hair-2);border:1px solid var(--hair-2);border-radius:18px;overflow:hidden}
-@media(max-width:900px){.principles{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(max-width:520px){.principles{grid-template-columns:1fr}}
-.principles div{background:var(--ink);padding:26px 22px}
-.principles h3{font-family:var(--serif);font-weight:460;font-size:20px;letter-spacing:-.01em;line-height:1.2}
-.principles p{color:var(--dim);font-size:14px;margin-top:10px}
+/* filmstrip of real screens */
+.strip{margin-top:26px;display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:10px}
+.strip figure{flex:0 0 auto;width:clamp(140px,13vw,176px);scroll-snap-align:start}
+.strip img{width:100%;border:1px solid var(--rule);border-radius:14px}
+.strip figcaption{font-family:var(--mono);font-size:11px;color:var(--mute);margin-top:6px}
+.figline{font-family:var(--mono);font-size:11.5px;color:var(--mute);margin-top:4px}
 
-/* timeline */
-.strip{border-left:1px solid var(--hair);margin-left:5px;padding-left:clamp(22px,4vw,44px);display:flex;flex-direction:column;gap:clamp(36px,6vh,54px)}
-.job{position:relative}
-.job::before{content:"";position:absolute;left:calc(-1 * clamp(22px,4vw,44px) - 10px);top:8px;width:8px;height:8px;border-radius:50%;background:var(--ink);border:2px solid var(--brass)}
-.job .date{font-family:var(--mono);font-size:11px;letter-spacing:.2em;color:var(--brass);text-transform:uppercase}
-.job h3{font-family:var(--serif);font-weight:470;font-size:clamp(20px,2.4vw,27px);margin:8px 0 4px;letter-spacing:-.01em}
-.job .co{color:var(--paper);opacity:.8;font-size:14.5px}
-.job ul{margin-top:10px;padding-left:18px;color:var(--dim);font-size:14.5px;max-width:70ch}
-.job li{margin-top:5px}
-.badges{margin-top:12px;display:flex;flex-wrap:wrap;gap:8px}
-.badges span{font-family:var(--mono);font-size:10.5px;color:var(--brass);border:1px solid var(--brass-soft);background:var(--brass-soft);border-radius:100px;padding:4px 11px}
+.pipe{font-family:var(--mono);font-size:13px;line-height:2;margin-top:14px}
+.pipe b{color:var(--mark);font-weight:500;border-bottom:1px solid var(--mark)}
 
-/* toolkit */
-.kit{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1px;background:var(--hair-2);border:1px solid var(--hair-2);border-radius:16px;overflow:hidden}
-.kit>div{background:var(--ink);padding:24px 22px}
-.kit h3{font-family:var(--serif);font-weight:470;font-size:19px;margin-bottom:13px}
-.kit .tags{margin-top:0}
+/* principles */
+.laws{margin-top:28px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid var(--rule)}
+@media(max-width:900px){.laws{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:520px){.laws{grid-template-columns:1fr}}
+.laws div{padding:16px 16px 18px 0}
+.laws div+div{border-left:1px solid var(--soft);padding-left:16px}
+@media(max-width:900px){.laws div{border-left:0!important;padding-left:0!important;border-bottom:1px solid var(--soft)}}
+.laws .k{font-weight:900;font-variation-settings:"wdth" 62;font-size:54px;line-height:.9;color:var(--mark)}
+.laws h3{font-weight:700;font-size:18px;margin-top:10px;line-height:1.2}
+.laws p{color:var(--mute);font-size:15px;margin-top:6px}
 
-/* creative */
-.cre-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
-@media(max-width:900px){.cre-grid{grid-template-columns:1fr}}
-.cre-grid .media{aspect-ratio:4/5}
-.cre-grid .name{font-size:clamp(24px,2.3vw,32px);overflow-wrap:anywhere}
-body[data-mode="creative"] .nav-link.eng{display:none}
-.ct{display:none}body[data-mode="engineer"] .ct.e,body[data-mode="creative"] .ct.c{display:inline}
-.tracks{margin-top:16px;border-top:1px solid var(--hair)}
-.tracks a{display:flex;justify-content:space-between;align-items:baseline;padding:12px 0;border-bottom:1px solid var(--hair);text-decoration:none}
-.tracks .t{font-family:var(--serif);font-size:19px}
-.tracks .m{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;color:var(--dim);text-transform:uppercase}
-.tracks a:hover .t{color:var(--brass)}
-.bridge{margin-top:clamp(40px,6vh,64px);border:1px dashed var(--hair);border-radius:16px;padding:26px clamp(20px,3vw,34px);
-  display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;align-items:center}
-.bridge p{font-family:var(--serif);font-size:clamp(18px,2.2vw,24px);max-width:48ch;line-height:1.35}
-.bridge p em{color:var(--brass)}
+/* CV */
+.cv{margin-top:26px;border-top:1px solid var(--rule)}
+.cv .item{display:grid;grid-template-columns:140px minmax(0,1fr);gap:18px;padding:18px 0;border-bottom:1px solid var(--soft)}
+@media(max-width:600px){.cv .item{grid-template-columns:1fr;gap:4px}}
+.cv .yr{font-family:var(--mono);font-size:12.5px;color:var(--mute);padding-top:3px}
+.cv h3{font-weight:700;font-variation-settings:"wdth" 90;font-size:20px;line-height:1.25}
+.cv .co{font-size:15px;margin-top:2px}
+.cv ul{margin:10px 0 0 18px;color:var(--mute);font-size:15.5px;max-width:70ch}
+.cv li{margin-top:4px}
+.cv .aw{font-family:var(--mono);font-size:11.5px;margin-top:10px;color:var(--ink)}
+.cv .aw span{color:var(--mark)}
+.kit{margin-top:12px;font-size:15.5px;color:var(--mute);max-width:80ch}
+.kit b{color:var(--ink);font-weight:600}
 
 /* contact */
-.contact h2{font-family:var(--serif);font-variation-settings:"opsz" 144;font-weight:400;font-size:clamp(38px,7vw,100px);line-height:1.02;letter-spacing:-.025em;margin-top:14px}
-.contact h2 a{text-decoration:none;font-style:italic;color:var(--brass);font-weight:330}
-.contact .row{margin-top:clamp(30px,5vh,46px);display:flex;flex-wrap:wrap;gap:10px}
-footer{border-top:1px solid var(--hair-2);padding:22px 0 30px}
-footer .frame{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--dim);text-transform:uppercase}
+.end{margin-top:clamp(70px,11vh,120px);border-top:2px solid var(--rule);padding:26px 0 18px}
+.end .big{font-weight:800;font-variation-settings:"wdth" 64;text-transform:uppercase;font-size:clamp(28px,8vw,120px);overflow-wrap:anywhere;line-height:.88;letter-spacing:-.01em}
+.end .big a{text-decoration:none;border-bottom:.06em solid var(--mark)}
+.end .big a:hover{color:var(--mark)}
+.end .out{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px 26px;font-family:var(--mono);font-size:13px}
+.colophon{border-top:1px solid var(--rule);margin-top:40px;padding:14px 0 30px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;font-family:var(--mono);font-size:11.5px;color:var(--mute)}
 
-@media (prefers-reduced-motion: reduce){
-  html{scroll-behavior:auto}
-  .rv{opacity:1;transform:none;transition:none}
-  *{animation:none !important;transition-duration:.01ms !important}
-}
+/* ---------- creative side (liner notes) ---------- */
+.tracks{margin-top:26px;border-top:1px solid var(--rule)}
+.track{display:grid;grid-template-columns:56px 150px minmax(0,1fr) auto;gap:20px;align-items:start;padding:22px 0;border-bottom:1px solid var(--soft)}
+@media(max-width:760px){.track{grid-template-columns:40px 96px minmax(0,1fr)}.track .go{grid-column:3}}
+.track .side-id{font-family:var(--mono);font-size:13px;color:var(--mark);padding-top:4px}
+.track .art{width:100%;aspect-ratio:1;object-fit:cover;border:1px solid var(--rule)}
+.track .art.type{display:flex;align-items:center;justify-content:center;background:var(--hi);font-weight:900;font-variation-settings:"wdth" 62;font-size:clamp(17px,2.4vw,30px);text-transform:uppercase;text-align:center;line-height:.9;padding:8px;overflow:hidden}
+.track h3{overflow-wrap:anywhere;font-weight:800;font-variation-settings:"wdth" 75;font-size:clamp(26px,3vw,38px);line-height:1;text-transform:uppercase}
+.track .role{font-family:var(--mono);font-size:12px;color:var(--mute);margin-top:6px}
+.track p{color:var(--mute);margin-top:10px;max-width:58ch;font-size:16px}
+.track .go{font-family:var(--mono);font-size:12.5px;white-space:nowrap;padding-top:6px}
+.credits{margin-top:30px;font-family:var(--mono);font-size:12.5px;color:var(--mute);line-height:1.9;columns:2;column-gap:40px}
+@media(max-width:700px){.credits{columns:1}}
+.credits b{color:var(--ink);font-weight:500}
+
+@media (prefers-reduced-motion: reduce){*{transition:none!important}html{scroll-behavior:auto}}
 </style>
 </head>
-<body data-mode="engineer">
-<div class="prog" id="prog" aria-hidden="true"></div>
+<body>
 
-<nav class="nav" aria-label="Main">
-  <div class="frame">
-    <a class="sig" href="#top">Hirak&nbsp;Banerjee</a>
-    <div class="nav-r">
-      <a class="nav-link opt eng" href="#work">Work</a>
-      <a class="nav-link opt eng" href="#career">Career</a>
-      <div class="switch" role="group" aria-label="View mode">
-        <span class="knob" aria-hidden="true"></span>
-        <button type="button" data-mode="engineer" aria-pressed="true">Engineer</button>
-        <button type="button" data-mode="creative" aria-pressed="false">Creative</button>
-      </div>
-    </div>
-  </div>
-</nav>
-
-<main id="top">
-
-<!-- ============ ENGINEER MODE ============ -->
-<div data-for="engineer">
-
-<header class="hero">
-  <div class="frame">
-    <p class="eyebrow">Senior Quality Engineer · Ontario, Canada</p>
-    <h1>I build AI into how software gets tested, and <em>verify</em> what&nbsp;AI&nbsp;builds.</h1>
-    <p class="hero-sub"><b>14 years</b> owning quality for systems where mistakes cost money: <b>payments</b> at one of
-    Canada's largest banks, and <b>insurance &amp; wealth</b> platforms before that. Today I pair that discipline with
-    LLMs: AI test tooling in daily use at the bank, and AI-orchestrated products I ship, measure and run myself.</p>
-    <div class="proof">
-      <div><p class="n">14<small>yrs</small></p><p class="l">QE · banking, payments, insurance, wealth</p></div>
-      <div><p class="n">3</p><p class="l">AI-built testing tools in use at a Big-5 bank</p></div>
-      <div><p class="n">499</p><p class="l">measured LLM app-generation runs</p></div>
-      <div><p class="n">4.6<small>★</small></p><p class="l">DayDrop · 80 ratings · 175 countries</p></div>
-    </div>
-    <div class="hero-cta">
-      <a class="btn solid" href="#work">See the work ↓</a>
-      <a class="btn" href="https://linkedin.com/in/hirak-banerjee-906aa940/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
-      <a class="btn" href="mailto:hirak.b@hotmail.com">Email</a>
+<header class="head">
+  <div class="w">
+    <p class="who"><b>Hirak Banerjee</b><span class="opt"> · <span id="doc">Quality report</span> · Ontario, Canada</span></p>
+    <div class="toggle" role="group" aria-label="View">
+      <button type="button" data-side="eng" aria-pressed="true">Engineer</button>
+      <button type="button" data-side="cre" aria-pressed="false">Creative</button>
     </div>
   </div>
 </header>
 
-<!-- AT THE BANK -->
-<section id="bank">
-  <div class="frame">
-    <div class="sec-head rv">
-      <p class="eyebrow">At the bank</p>
-      <h2>Testing tools I built with AI, <em>used every release.</em></h2>
-      <p>Bulk payments on a Big-5 Canadian bank's platform: event-driven Kafka flows, ISO 20022 messaging, Oracle and API
-      validation, CI/CD gates. These tools came out of that work and were built in days, not months.</p>
+<main class="w">
+
+<!-- ===================== ENGINEER ===================== -->
+<div class="side eng">
+
+<section class="hero">
+  <div class="hero-grid">
+    <div>
+      <p class="kicker"><b>Senior Quality Engineer</b> · 14 years · banking, payments, insurance &amp; wealth</p>
+      <h1>I build AI into how software gets tested<span class="lite">and I <u>verify</u> what AI builds.</span></h1>
     </div>
-    <div class="tools">
-      <article class="card tool rv"><div class="card-body">
-        <p class="num">01</p>
-        <h3>Requirements → test cases, generated by an LLM</h3>
-        <p>Paste a user story or requirements page, pick the payment rail, and get structured test cases, either as a
-        reviewer workbook or ready to upload into test management. It also converts hand-edited sheets.</p>
-        <span class="ai">LLM-powered · GitHub Copilot</span>
-      </div></article>
-      <article class="card tool rv"><div class="card-body">
-        <p class="num">02</p>
-        <h3>One-click payment trace with audit-ready evidence</h3>
-        <p>Follows a payment end to end, from the payment network through the database to the matching Kafka event, then
-        writes the tracking record and a step-by-step evidence document with screenshots. Runs locally or from Jenkins.</p>
-        <span class="ai">Built with Copilot · Claude Opus</span>
-      </div></article>
-      <article class="card tool rv"><div class="card-body">
-        <p class="num">03</p>
-        <h3>ISO 20022 test-data generator</h3>
-        <p>Produces valid bulk payment files (pain.001 payables, pain.013 requests, camt.056 cancellations) across
-        transaction variants, with per-environment configuration so one scenario runs everywhere. Zero dependencies.</p>
-        <span class="ai">Built with Copilot · Claude Opus</span>
-      </div></article>
+    <figure class="fig">
+      <img src="img/v4/hirak.jpg" alt="Hirak Banerjee" width="640" height="640">
+      <figcaption><span>Fig. 1</span><span>Hirak Banerjee, Ontario</span></figcaption>
+    </figure>
+  </div>
+  <p class="lede">For fourteen years I've owned quality for financial systems where a bug costs real money:
+  <b>bulk payments</b> at one of Canada's largest banks today, and <b>insurance and wealth</b> platforms for Manulife and
+  Canada Life before that. Now I pair that discipline with LLMs. I build AI test tooling my team uses every release, and I
+  ship AI-orchestrated products that I measure like production systems.</p>
+  <dl class="summary">
+    <div><dt>Experience</dt><dd>14<small>yrs</small></dd><p class="note">QE in regulated finance</p></div>
+    <div><dt>At the bank</dt><dd>3</dd><p class="note">AI-built testing tools in use</p></div>
+    <div><dt>LLM runs</dt><dd>499</dd><p class="note">logged and measured, not estimated</p></div>
+    <div><dt>DayDrop</dt><dd>175</dd><p class="note">countries · 4.6★ from 80 ratings</p></div>
+    <div><dt>Awards</dt><dd>3</dd><p class="note">innovation and project awards</p></div>
+  </dl>
+</section>
+
+<!-- §1 -->
+<section class="sec" id="bank">
+  <p class="lab"><b>§1</b>At the bank<br>2021 – present</p>
+  <div>
+    <h2>Tools I built with AI, used every release</h2>
+    <p class="intro">Bulk payments on a <b>Big-5 Canadian bank's</b> platform: Kafka event flows, ISO 20022 messaging, Oracle and
+    API validation, CI/CD gates. These three came out of that work and each was built in days, not months.</p>
+    <div class="rows">
+      <div class="row">
+        <p class="id">T-01</p>
+        <div><h3>Requirements in, test cases out, written by an LLM</h3>
+        <p>Paste a user story or requirements page and pick the payment rail. It returns structured test cases as a reviewer
+        workbook or a file ready to upload into test management. It also converts hand-edited sheets.</p></div>
+        <p class="meta"><i>●</i> LLM-powered<br>GitHub Copilot</p>
+      </div>
+      <div class="row">
+        <p class="id">T-02</p>
+        <div><h3>One-click payment trace with audit evidence</h3>
+        <p>Follows a single payment from the payment network through the database to its Kafka event, then writes the tracking
+        record and a step-by-step evidence document with screenshots. Runs on a laptop or from Jenkins.</p></div>
+        <p class="meta"><i>●</i> Built with AI<br>Copilot · Claude Opus</p>
+      </div>
+      <div class="row">
+        <p class="id">T-03</p>
+        <div><h3>ISO 20022 test-data generator</h3>
+        <p>Generates valid bulk payment files (pain.001 payables, pain.013 requests, camt.056 cancellations) across
+        transaction variants. One configuration per environment, so a scenario runs everywhere. No dependencies.</p></div>
+        <p class="meta"><i>●</i> Built with AI<br>Copilot · Claude Opus</p>
+      </div>
     </div>
-    <p class="fine rv">Described at a high level on purpose. Client systems, code and data stay with the client.</p>
+    <p class="fine">Described at a high level on purpose. Client systems, code and data stay with the client.</p>
   </div>
 </section>
 
-<!-- AI-ORCHESTRATED WORK -->
-<section id="work">
-  <div class="frame">
-    <div class="sec-head rv">
-      <p class="eyebrow">AI-orchestrated work</p>
-      <h2>Products I designed, shipped and <em>measured</em> myself.</h2>
-      <p>Each one is real multi-model or multi-agent orchestration, with quality gates doing the heavy lifting.</p>
-    </div>
+<!-- §2 -->
+<section class="sec" id="work">
+  <p class="lab"><b>§2</b>My own work<br>2025 – present</p>
+  <div>
+    <h2>Products I orchestrate with AI, and measure</h2>
 
-    <!-- SwiftGen flagship -->
-    <article class="card flag rv">
-      <div class="card-body">
+    <!-- SwiftGen -->
+    <article class="proj">
+      <div class="proj-h"><h3>SwiftGen AI</h3><span class="tagline">Multi-agent iOS app generator · solo · prepared for Y Combinator</span></div>
+      <div class="body">
         <div>
-          <p class="kicker">Flagship · multi-agent · multi-model · prepared for Y Combinator</p>
-          <h3 class="name">SwiftGen AI</h3>
-          <p class="claim">Describe an app in plain English and get a <b>working native iOS app</b>: planned, written,
-          compiled, repaired, launched in the simulator and streamed to your browser, then editable by chat.
-          Built solo: <b>315 commits in 3.5 months, ~90k lines</b>.</p>
-          <ol class="pipe">
-            <li><b>Understand.</b> Intent classification and complexity rating route each request.</li>
-            <li><b>Generate.</b> A task-aware router across Claude Sonnet/Opus, Gemini, Grok and GPT, with fallbacks, retries and truncation recovery. Complex apps are built screen by screen with schema-enforced output.</li>
-            <li><b>Pre-validate</b><span class="gate">gate</span> ~970 injected rules and a 193-pattern validator fix known failure modes before any build, without calling an LLM.</li>
-            <li><b>Build &amp; heal</b><span class="gate">gate</span> Compile; on failure an LLM healer gets 3 attempts, escalating to a stronger model.</li>
-            <li><b>Verify</b><span class="gate">gate</span> Launch in the iOS Simulator, screenshot, process-alive and crash-log checks.</li>
-            <li><b>Learn.</b> 600+ healer fixes logged; recurring ones get promoted into the validator.</li>
+          <p>You describe an app in one sentence. SwiftGen plans it, writes native SwiftUI, compiles it, repairs what breaks,
+          launches it in the iOS Simulator and streams it to your browser, where you keep changing it by chat.</p>
+          <p>I built it alone: <b>315 commits in three and a half months, about 90,000 lines</b>. The interesting part isn't the
+          generation. It's everything that stops a model's output from reaching a user unchecked.</p>
+          <ol class="steps">
+            <li><span class="n">01</span><span><b>Classify.</b> Intent and complexity decide the route and the model.</span><span></span></li>
+            <li><span class="n">02</span><span><b>Generate.</b> A router across Claude Sonnet and Opus, Gemini, Grok and GPT, with fallbacks and truncation recovery.</span><span></span></li>
+            <li><span class="n">03</span><span><b>Pre-validate.</b> About 970 injected rules and 193 fix patterns, no LLM call.</span><span class="g">gate</span></li>
+            <li><span class="n">04</span><span><b>Build and heal.</b> Three repair attempts, escalating to a stronger model.</span><span class="g">gate</span></li>
+            <li><span class="n">05</span><span><b>Verify.</b> Launch, screenshot, process check, crash-log scan.</span><span class="g">gate</span></li>
+            <li><span class="n">06</span><span><b>Learn.</b> 600+ repairs logged; repeat fixes promoted into the validator.</span><span></span></li>
           </ol>
-          <div class="links"><a href="https://swiftgenai.dev" target="_blank" rel="noopener noreferrer">swiftgenai.dev ↗</a></div>
+          <p class="links"><a href="https://swiftgenai.dev" target="_blank" rel="noopener noreferrer">swiftgenai.dev ↗</a></p>
         </div>
         <div>
-          <div class="metrics">
-            <div><p class="n">66%</p><p class="l">end-to-end generation success<br>(71% over the last 100 runs)</p></div>
-            <div><p class="n">83%</p><p class="l">success on chat modifications</p></div>
-            <div><p class="n">~46%</p><p class="l">of failed first builds rescued by the healer</p></div>
-            <div><p class="n">2.4<small style="font-size:.45em;color:var(--dim)"> min</small></p><p class="l">median idea → running app</p></div>
-            <div class="wide"><p class="n">499</p><p class="l">logged runs behind every number here. Measured, not claimed.</p></div>
-          </div>
-          <p class="caveat"><b>Measured Jan–Apr 2026 on that generation of models</b> (Claude Sonnet 4.6 / Opus 4.6,
-          GPT-4.1, Gemini 2.5). The harness is model-agnostic and can be re-run on current models on request.</p>
-          <div class="tags"><span>Python</span><span>FastAPI</span><span>Swift/SwiftUI</span><span>LLM evaluation</span><span>Next.js</span><span>Simulator farm</span></div>
+          <table class="res">
+            <caption>Table 1. Results from the pipeline's own logs</caption>
+            <thead><tr><th>Measure</th><th>Result</th><th>Basis</th></tr></thead>
+            <tbody>
+              <tr><td>New app, idea to running</td><td class="v">66%</td><td class="b">333 generations · 71% over the last 100</td></tr>
+              <tr><td>Change by chat</td><td class="v">83%</td><td class="b">166 modifications</td></tr>
+              <tr><td>Failed builds rescued</td><td class="v">~46%</td><td class="b">by the healer loop</td></tr>
+              <tr><td>Time to a running app</td><td class="v">2.4m</td><td class="b">median, successful runs</td></tr>
+            </tbody>
+          </table>
+          <p class="caveat">Measured January to April 2026 on that generation of models (Claude Sonnet 4.6 and Opus 4.6,
+          GPT-4.1, Gemini 2.5). The harness doesn't care which model it tests, so I can re-run it on current ones.</p>
+        </div>
+      </div>
+      <div class="strip" aria-label="Apps generated by SwiftGen">
+        <figure><img src="img/v4/sg-workout.jpg" alt="Workout tracker generated by SwiftGen" loading="lazy" width="420" height="913"><figcaption>"a workout tracker"</figcaption></figure>
+        <figure><img src="img/v4/sg-finance.jpg" alt="Personal finance dashboard generated by SwiftGen" loading="lazy" width="420" height="913"><figcaption>"a personal finance app"</figcaption></figure>
+        <figure><img src="img/v4/sg-food.jpg" alt="Food delivery app generated by SwiftGen" loading="lazy" width="420" height="913"><figcaption>"a food delivery app"</figcaption></figure>
+        <figure><img src="img/v4/sg-shop.jpg" alt="Shopping app generated by SwiftGen" loading="lazy" width="420" height="913"><figcaption>"an online shop"</figcaption></figure>
+        <figure><img src="img/v4/sg-boards.jpg" alt="Project board app generated by SwiftGen" loading="lazy" width="420" height="913"><figcaption>"a project board"</figcaption></figure>
+      </div>
+      <p class="figline">Fig. 2. Simulator screenshots taken by the pipeline's own verify step, Jan 2026.</p>
+    </article>
+
+    <!-- DayDrop -->
+    <article class="proj">
+      <div class="proj-h"><h3>DayDrop</h3><span class="tagline">iOS app · live on the App Store · 175 countries · 4.6★</span></div>
+      <div class="body">
+        <div>
+          <p>Countdown widgets with <b>AI-generated backgrounds</b>, Dynamic Island Live Activities and iCloud sync. I built it
+          with an AI coding agent and tested it like production: committed XCUITest regression suites, checks on real devices,
+          and verification against sources the AI didn't write.</p>
+          <p>For example, before the lunar-calendar release every date from 2026 to 2028 was checked against the <b>Hong Kong
+          Observatory's official tables</b>: 1,078 days, zero mismatches. The listing and screenshots ship in 16 languages
+          through an automated pipeline.</p>
+          <p class="links"><a href="https://apps.apple.com/app/id6759470132" target="_blank" rel="noopener noreferrer">App Store ↗</a><a href="https://daydrop.beatroot.dev" target="_blank" rel="noopener noreferrer">daydrop.beatroot.dev ↗</a></p>
+        </div>
+        <div class="strip" style="margin-top:0">
+          <figure><img src="img/v4/dd-list.jpg" alt="DayDrop countdown list" loading="lazy" width="420" height="913"><figcaption>Countdowns</figcaption></figure>
+          <figure><img src="img/v4/dd-detail.jpg" alt="DayDrop event detail with AI background" loading="lazy" width="420" height="913"><figcaption>AI background</figcaption></figure>
         </div>
       </div>
     </article>
 
-    <div class="grid2">
-      <!-- DayDrop -->
-      <article class="card rv">
-        <div class="media"><video muted loop playsinline preload="none" poster="videos/poster-daydrop.jpg" data-src="videos/hero-daydrop.mp4"></video></div>
-        <div class="card-body">
-          <p class="kicker">iOS · live on the App Store · 175 countries</p>
-          <h3 class="name">DayDrop</h3>
-          <p class="claim">Countdown widgets with <b>AI-generated backgrounds</b>, Dynamic Island Live Activities and iCloud sync.
-          Built solo with an AI coding agent, <b>tested like production</b>: committed XCUITest regressions, device checks,
-          and independent verification, e.g. the lunar-calendar feature checked day by day against the Hong Kong
-          Observatory's official tables before release. Listing and screenshots localized into 16 languages by an automated pipeline.</p>
-          <div class="tags"><span>Swift</span><span>SwiftUI</span><span>WidgetKit</span><span>XCUITest</span><span>CloudKit</span><span>Cloudflare Workers</span></div>
-          <div class="links"><a href="https://apps.apple.com/app/id6759470132" target="_blank" rel="noopener noreferrer">App Store ↗</a><a href="https://daydrop.beatroot.dev" target="_blank" rel="noopener noreferrer">Website ↗</a></div>
+    <!-- Stackwrite -->
+    <article class="proj">
+      <div class="proj-h"><h3>Stackwrite</h3><span class="tagline">Developer reference · written by an 8-agent pipeline</span></div>
+      <div class="body">
+        <div>
+          <p>A reference site on developer-tool pricing and limits, produced by agents on a schedule. The part I care about is
+          the gates. The writer can't add a fact the researcher didn't source. A fact-checker re-fetches every source and
+          defaults to <b>hold</b>. A reviewer opens the built page on desktop and mobile. Nothing ships without a pass.</p>
+          <p class="links"><a href="https://stackwrite.com" target="_blank" rel="noopener noreferrer">stackwrite.com ↗</a></p>
         </div>
-      </article>
+        <div>
+          <p class="pipe">research → write → visuals → <b>fact-check</b> → seo/geo → <b>review</b> → publish → index</p>
+          <p class="figline" style="margin-top:10px">Underlined steps can stop the run. 50+ pages now surface in Bing's top 7 for the questions AI assistants ask.</p>
+        </div>
+      </div>
+    </article>
 
-      <!-- Stackwrite -->
-      <article class="card rv">
-        <div class="media"><video muted loop playsinline preload="none" poster="videos/poster-stackwrite.jpg" data-src="videos/hero-stackwrite.mp4"></video></div>
-        <div class="card-body">
-          <p class="kicker">8-agent editorial pipeline · runs on a schedule</p>
-          <h3 class="name">Stackwrite</h3>
-          <p class="claim">A developer-tools reference produced by agents, where <b>the quality gates are the product</b>.
-          The writer may not add any fact outside the researcher's sourced table, a fact-checker re-fetches every source and
-          defaults to <b>hold</b>, and nothing publishes without a pass. Structured for AI-assistant retrieval: 50+ pages
-          surface in Bing's top 7.</p>
-          <div class="agents" aria-label="Pipeline">
-            <span>research</span><i>→</i><span>write</span><i>→</i><span>visuals</span><i>→</i><span class="g">fact-check</span><i>→</i><span>SEO/GEO</span><i>→</i><span class="g">review</span><i>→</i><span>publish</span>
-          </div>
-          <div class="links"><a href="https://stackwrite.com" target="_blank" rel="noopener noreferrer">stackwrite.com ↗</a></div>
-        </div>
-      </article>
-    </div>
-
-    <!-- open source strip -->
-    <article class="card rv" style="margin-top:14px">
-      <div class="card-body">
-        <p class="kicker">Open source</p>
-        <div class="grid2" style="margin-top:6px">
-          <div>
-            <h3 class="name" style="font-size:26px">RadioWave</h3>
-            <p class="claim">Hear your AI think. A macOS menu-bar app that turns Claude Code's live activity into real-time synthesized radio audio, via Claude Code hooks. MIT.</p>
-            <div class="links"><a href="https://github.com/hirakcoder/RadioWave" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div>
-          </div>
-          <div>
-            <h3 class="name" style="font-size:26px">llms-txt-init · tiktok-produce</h3>
-            <p class="claim">One command to scaffold an llms.txt and an AI-crawler-aware robots.txt, and a screen-recording-to-short-video pipeline with voiceover and synced captions.</p>
-            <div class="links"><a href="https://github.com/hirakcoder" target="_blank" rel="noopener noreferrer">All repos ↗</a></div>
-          </div>
-        </div>
+    <!-- Open source -->
+    <article class="proj">
+      <div class="proj-h"><h3>Open source</h3><span class="tagline">github.com/hirakcoder</span></div>
+      <div class="rows" style="margin-top:14px">
+        <div class="row"><p class="id">OSS-1</p><div><h3>RadioWave</h3><p>A macOS menu-bar app that turns Claude Code's live activity into synthesized radio sound, through Claude Code hooks. MIT.</p></div><p class="meta"><a href="https://github.com/hirakcoder/RadioWave" target="_blank" rel="noopener noreferrer">GitHub ↗</a></p></div>
+        <div class="row"><p class="id">OSS-2</p><div><h3>llms-txt-init</h3><p>One command that scaffolds an llms.txt and an AI-crawler-aware robots.txt for any site.</p></div><p class="meta"><a href="https://github.com/hirakcoder/llms-txt-init" target="_blank" rel="noopener noreferrer">GitHub ↗</a></p></div>
+        <div class="row"><p class="id">OSS-3</p><div><h3>tiktok-produce</h3><p>Screen recording in, short video out: voiceover, synced captions and a 1080×1920 render in one command.</p></div><p class="meta"><a href="https://github.com/hirakcoder/tiktok-produce" target="_blank" rel="noopener noreferrer">GitHub ↗</a></p></div>
       </div>
     </article>
   </div>
 </section>
 
-<!-- PRINCIPLES -->
-<section id="how">
-  <div class="frame">
-    <div class="sec-head rv">
-      <p class="eyebrow">How I work with AI</p>
-      <h2>AI output is <em>verified,</em> not trusted.</h2>
-    </div>
-    <div class="principles rv">
-      <div><h3>Fix the system, not the output</h3><p>Never hand-patch what an AI generated. Fix the prompt, the validator or the healer, then re-test across simple, medium and complex cases.</p></div>
-      <div><h3>Build success ≠ working</h3><p>A green build proves nothing. Launch it, tap it, screenshot it, check the crash logs.</p></div>
-      <div><h3>Measure, then claim</h3><p>Every number on this page comes from logs or live data, with the date and model generation stated.</p></div>
-      <div><h3>Independent oracles</h3><p>Check AI-written logic against a source it didn't write, such as official tables, specs or a second system.</p></div>
+<!-- §3 -->
+<section class="sec" id="method">
+  <p class="lab"><b>§3</b>Method</p>
+  <div>
+    <h2>AI output gets verified, not trusted</h2>
+    <div class="laws">
+      <div><p class="k">1</p><h3>Fix the system, not the output</h3><p>Never hand-patch what a model wrote. Fix the prompt, the validator or the healer, then re-test simple, medium and complex cases.</p></div>
+      <div><p class="k">2</p><h3>A green build proves nothing</h3><p>Launch it, tap it, screenshot it, read the crash log.</p></div>
+      <div><p class="k">3</p><h3>Measure, then claim</h3><p>Every number here comes from logs or live data, with its date and the models it ran on.</p></div>
+      <div><p class="k">4</p><h3>Use an outside oracle</h3><p>Check AI-written logic against something it didn't write: official tables, the spec, a second system.</p></div>
     </div>
   </div>
 </section>
 
-<!-- CAREER -->
-<section id="career">
-  <div class="frame">
-    <div class="sec-head rv">
-      <p class="eyebrow">Career</p>
-      <h2>Fourteen years of <em>making financial software behave.</em></h2>
-    </div>
-    <div class="strip">
-      <div class="job rv">
-        <p class="date">2021 — Present</p>
-        <h3>Senior Software Quality Engineer, AI-Augmented Test Automation</h3>
-        <p class="co">Tata Consultancy Services · Big-5 Canadian bank · Payments</p>
+<!-- §4 -->
+<section class="sec" id="career">
+  <p class="lab"><b>§4</b>Career</p>
+  <div>
+    <h2>Fourteen years in financial software</h2>
+    <div class="cv">
+      <div class="item">
+        <p class="yr">2021 – now</p>
+        <div><h3>Senior Software Quality Engineer, AI-Augmented Test Automation</h3>
+        <p class="co">Tata Consultancy Services · for a Big-5 Canadian bank · Payments</p>
         <ul>
-          <li>Quality for bulk payments (payables, receivables, cancellations): Kafka event flows, ISO 20022, Oracle / MongoDB / SQL Server and mainframe validation.</li>
-          <li>Built the three AI testing tools above: an LLM-powered test-case generator, a one-click payment trace with audit evidence, and an ISO 20022 test-data generator.</li>
-          <li>Java / Selenium / Cucumber BDD / REST Assured frameworks and XCUITest mobile suites, gated in Jenkins CI/CD.</li>
-        </ul>
+          <li>Quality for bulk payments (payables, receivables, cancellations) across Kafka, ISO 20022, Oracle, MongoDB, SQL Server and mainframe.</li>
+          <li>Built the three AI testing tools in §1.</li>
+          <li>Java, Selenium, Cucumber BDD and REST Assured frameworks, plus XCUITest mobile suites, gated in Jenkins.</li>
+        </ul></div>
       </div>
-      <div class="job rv">
-        <p class="date">2012 — 2021</p>
-        <h3>Senior Quality Engineer / Test Lead</h3>
-        <p class="co">Cognizant · Insurance &amp; Wealth · Manulife · Canada Life · a major US insurer</p>
+      <div class="item">
+        <p class="yr">2012 – 2021</p>
+        <div><h3>Senior Quality Engineer and Test Lead</h3>
+        <p class="co">Cognizant · Insurance &amp; Wealth · Manulife, Canada Life and a major US insurer</p>
         <ul>
-          <li>Test Lead in an onshore–offshore model: estimation, strategy, sign-off, defect triage and mentoring.</li>
-          <li>Automation frameworks (Selenium/Java, TestNG, Cucumber BDD, Robot Framework, UFT) with Jenkins CI; API, ETL (Apache NiFi) and data testing.</li>
-          <li>Automation POCs driven to break-even; mainframe modernization for insurance platforms.</li>
+          <li>Led testing in an onshore–offshore model: estimates, strategy, sign-off, triage and mentoring.</li>
+          <li>Automation in Selenium/Java, TestNG, Cucumber BDD, Robot Framework and UFT with Jenkins CI; API, ETL and data testing.</li>
+          <li>Took automation proofs of concept to break-even and worked on mainframe modernization.</li>
         </ul>
-        <div class="badges"><span>Best Innovation 2016</span><span>Best Innovation 2014</span><span>Best Project 2014</span></div>
+        <p class="aw"><span>★</span> Best Innovation 2016 · <span>★</span> Best Innovation 2014 · <span>★</span> Best Project 2014</p></div>
       </div>
-      <div class="job rv">
-        <p class="date">2008 — 2012</p>
-        <h3>B.Tech, Electronics &amp; Communication</h3>
-        <p class="co">National Institute of Technology, Agartala</p>
+      <div class="item">
+        <p class="yr">2008 – 2012</p>
+        <div><h3>B.Tech, Electronics &amp; Communication</h3><p class="co">National Institute of Technology, Agartala</p></div>
       </div>
     </div>
+    <p class="kit"><b>Testing:</b> Java, Selenium, Cucumber BDD, REST Assured, XCUITest, Jenkins. <b>Payments &amp; data:</b> Apache Kafka, ISO 20022,
+    Oracle, SQL Server, MongoDB, mainframe. <b>AI:</b> Claude Code, GitHub Copilot, multi-agent orchestration, LLM evaluation, MCP.
+    <b>Building:</b> Swift and SwiftUI, Python, FastAPI, Next.js, Cloudflare.</p>
   </div>
 </section>
 
-<!-- TOOLKIT -->
-<section id="kit">
-  <div class="frame">
-    <div class="sec-head rv"><p class="eyebrow">Toolkit</p><h2>What I work in, <em>day and night.</em></h2></div>
-    <div class="kit rv">
-      <div><h3>Quality engineering</h3><div class="tags"><span>Java</span><span>Selenium</span><span>Cucumber BDD</span><span>REST Assured</span><span>XCUITest</span><span>Jenkins</span></div></div>
-      <div><h3>Payments &amp; data</h3><div class="tags"><span>Apache Kafka</span><span>ISO 20022</span><span>Oracle</span><span>SQL Server</span><span>MongoDB</span><span>Mainframe</span></div></div>
-      <div><h3>AI &amp; LLMs</h3><div class="tags"><span>Claude Code</span><span>GitHub Copilot</span><span>Multi-agent orchestration</span><span>LLM evaluation</span><span>MCP</span></div></div>
-      <div><h3>Building</h3><div class="tags"><span>Swift / SwiftUI</span><span>Python</span><span>FastAPI</span><span>Next.js</span><span>Cloudflare</span></div></div>
+</div>
+
+<!-- ===================== CREATIVE ===================== -->
+<div class="side cre">
+
+<section class="hero">
+  <p class="kicker"><b>Side B</b> · off the clock</p>
+  <h1>Songs, a film and a channel<span class="lite">made after the day job, with the same eye for what feels off.</span></h1>
+  <dl class="summary four">
+    <div><dt>Singles</dt><dd>2</dd><p class="note">written, produced, mixed</p></div>
+    <div><dt>Short film</dt><dd>1</dd><p class="note">festival submission</p></div>
+    <div><dt>Subscribers</dt><dd>1.8K</dd><p class="note">in two months</p></div>
+    <div><dt>One video</dt><dd>257K</dd><p class="note">views</p></div>
+  </dl>
+</section>
+
+<section class="sec">
+  <p class="lab"><b>Tracklist</b>Liner notes</p>
+  <div>
+    <div class="tracks">
+      <div class="track">
+        <p class="side-id">A1</p>
+        <img class="art" src="img/v4/sach.jpg" alt="Sach single cover" loading="lazy" width="480" height="480">
+        <div><h3>Sach</h3><p class="role">Single · Hindi · written, composed, produced, mixed and mastered</p>
+        <p>Produced in FL Studio from first idea to master.</p></div>
+        <a class="go" href="https://open.spotify.com/album/2iuU054zylSyOvyknbgKQS" target="_blank" rel="noopener noreferrer">Spotify ↗</a>
+      </div>
+      <div class="track">
+        <p class="side-id">A2</p>
+        <img class="art" src="img/v4/unkaheen.jpg" alt="Unkaheen single cover" loading="lazy" width="480" height="480">
+        <div><h3>Unkaheen</h3><p class="role">Single · Hindi · written, composed, produced, mixed and mastered</p>
+        <p>The second release, same process, all in the box.</p></div>
+        <a class="go" href="https://open.spotify.com/track/3QHxGSHYniiJPI5bJt16Km" target="_blank" rel="noopener noreferrer">Spotify ↗</a>
+      </div>
+      <div class="track">
+        <p class="side-id">B1</p>
+        <div class="art type">Short<br>film</div>
+        <div><h3>The short</h3><p class="role">Writer · director · editor · producer</p>
+        <p>Made end to end, from pre-production through the final grade and sound mix, and submitted to a film festival.</p></div>
+        <span class="go" style="color:var(--mute)">Not online yet</span>
+      </div>
+      <div class="track">
+        <p class="side-id">B2</p>
+        <div class="art type">Football<br>Memes<br>AI</div>
+        <div><h3>FootballMemesAI</h3><p class="role">YouTube · creator · editor</p>
+        <p>Short-form football content, scripted, edited and published. 1,800 subscribers in its first two months, and one
+        video reached 257,000 views.</p></div>
+        <a class="go" href="https://youtube.com/@footballmemesai" target="_blank" rel="noopener noreferrer">YouTube ↗</a>
+      </div>
+    </div>
+    <div class="credits">
+      <p><b>Music</b> FL Studio · composition · mixing · mastering</p>
+      <p><b>Picture</b> DaVinci Resolve · CapCut · colour · sound design</p>
+      <p><b>Words</b> scripts · lyrics · storyboards</p>
+      <p><b>Day job</b> <a href="#" data-goto="eng">Side A, the engineer →</a></p>
     </div>
   </div>
 </section>
 
 </div>
 
-<!-- ============ CREATIVE MODE ============ -->
-<div data-for="creative">
-
-<header class="hero">
-  <div class="hero-video" aria-hidden="true"><video muted loop playsinline preload="none" poster="videos/poster-film.jpg" data-src="videos/hero-film.mp4" id="cre-bg"></video></div>
-  <div class="frame">
-    <p class="eyebrow">Off the clock</p>
-    <h1>Films, songs and stories, <em>made at night.</em></h1>
-    <p class="hero-sub">The same instinct behind good testing, <b>noticing what feels off</b>, is what makes a cut land or a
-    chorus work. I write, direct, edit and produce: a festival short film, two released singles, and a channel that
-    found <b>1,800 subscribers in two months</b>.</p>
-    <div class="proof" style="max-width:760px">
-      <div><p class="n">1</p><p class="l">short film · festival submission</p></div>
-      <div><p class="n">2</p><p class="l">released singles</p></div>
-      <div><p class="n">1.8K</p><p class="l">subscribers in 2 months</p></div>
-      <div><p class="n">257K</p><p class="l">views on one video</p></div>
-    </div>
-  </div>
-</header>
-
-<section id="creative-work">
-  <div class="frame">
-    <div class="cre-grid">
-      <article class="card rv">
-        <div class="media"><video muted loop playsinline preload="none" poster="videos/poster-film.jpg" data-src="videos/hero-film.mp4"></video></div>
-        <div class="card-body">
-          <p class="kicker">Short film · writer · director · editor</p>
-          <h3 class="name">The short</h3>
-          <p class="claim">Written, directed, edited and produced end to end, from pre-production to the final grade and sound. Submitted to a film festival.</p>
-          <div class="tags"><span>DaVinci Resolve</span><span>Direction</span><span>Colour</span><span>Sound design</span></div>
-        </div>
-      </article>
-      <article class="card rv">
-        <div class="media"><video muted loop playsinline preload="none" poster="videos/poster-music.jpg" data-src="videos/hero-music.mp4"></video></div>
-        <div class="card-body">
-          <p class="kicker">Music · singer-songwriter · producer</p>
-          <h3 class="name">Original music</h3>
-          <p class="claim">Composed, produced, mixed and mastered in FL Studio. Two Hindi singles, released on streaming platforms.</p>
-          <div class="tracks">
-            <a href="https://open.spotify.com/album/2iuU054zylSyOvyknbgKQS" target="_blank" rel="noopener noreferrer"><span class="t">Sach</span><span class="m">Spotify ↗</span></a>
-            <a href="https://open.spotify.com/track/3QHxGSHYniiJPI5bJt16Km" target="_blank" rel="noopener noreferrer"><span class="t">Unkaheen</span><span class="m">Spotify ↗</span></a>
-          </div>
-        </div>
-      </article>
-      <article class="card rv">
-        <div class="media"><video muted loop playsinline preload="none" poster="videos/poster-youtube.jpg" data-src="videos/hero-youtube.mp4"></video></div>
-        <div class="card-body">
-          <p class="kicker">YouTube · creator · editor</p>
-          <h3 class="name">FootballMemesAI</h3>
-          <p class="claim">Short-form football content, scripted, edited and published end to end. <b>1,800 subscribers in two months</b>, with one video at <b>257K views</b>.</p>
-          <div class="tags"><span>DaVinci Resolve</span><span>CapCut</span><span>Storytelling</span></div>
-          <div class="links"><a href="https://youtube.com/@footballmemesai" target="_blank" rel="noopener noreferrer">Channel ↗</a></div>
-        </div>
-      </article>
-    </div>
-    <div class="bridge rv">
-      <p>By day I'm a quality engineer. The <em>engineer</em> view has 14 years of that, plus the AI work.</p>
-      <button class="btn solid" type="button" data-goto="engineer">Switch to Engineer →</button>
-    </div>
-  </div>
+<!-- ===================== END (both) ===================== -->
+<section class="end" id="contact">
+  <p class="kicker">Contact</p>
+  <p class="big"><a href="mailto:hirak.b@hotmail.com">hirak.b@hotmail.com</a></p>
+  <p class="out">
+    <a href="https://linkedin.com/in/hirak-banerjee-906aa940/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+    <a href="https://github.com/hirakcoder" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+    <a href="https://x.com/hirak8" target="_blank" rel="noopener noreferrer">X ↗</a>
+  </p>
 </section>
 
-</div>
+<footer class="colophon">
+  <span>End of report. Written and built by hand, with AI in the loop.</span>
+  <span>Figures last verified September 2026</span>
+</footer>
 
-<!-- CONTACT (both modes) -->
-<section class="contact" id="contact">
-  <div class="frame">
-    <p class="eyebrow rv">Contact</p>
-    <h2 class="rv"><span class="ct e">Quality that holds up,<br>with AI in the loop.</span><span class="ct c">Got a story<br>worth telling?</span> <a href="mailto:hirak.b@hotmail.com">Say hello&nbsp;→</a></h2>
-    <div class="row rv">
-      <a class="btn" href="mailto:hirak.b@hotmail.com">Email</a>
-      <a class="btn" href="https://linkedin.com/in/hirak-banerjee-906aa940/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-      <a class="btn" href="https://github.com/hirakcoder" target="_blank" rel="noopener noreferrer">GitHub</a>
-      <a class="btn" href="https://x.com/hirak8" target="_blank" rel="noopener noreferrer">X</a>
-    </div>
-  </div>
-</section>
 </main>
-
-<footer><div class="frame"><span>© 2026 Hirak Banerjee</span><span>Ontario, Canada</span></div></footer>
 
 <script>
 (function(){
-  var body=document.body, reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  // ---- mode switch (URL hash + remembered) ----
-  function store(k,v){try{localStorage.setItem(k,v)}catch(e){}}
-  function setMode(m,scroll){
-    if(m!=='creative')m='engineer';
-    body.dataset.mode=m;
-    document.querySelectorAll('.switch button').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.mode===m)});
-    document.querySelectorAll('[data-for="'+m+'"]').forEach(function(el){el.classList.remove('fade-in');void el.offsetWidth;el.classList.add('fade-in')});
-    try{history.replaceState(null,'',m==='creative'?'#creative':location.pathname)}catch(e){}
-    store('mode',m);
-    observeAll(); loadVisibleVideos();
-    if(scroll)scrollTo({top:0,behavior:reduced?'auto':'smooth'});
+  var btns=document.querySelectorAll('.toggle button'), doc=document.getElementById('doc');
+  function set(s,scroll){
+    s = s==='cre' ? 'cre' : 'eng';
+    document.body.classList.toggle('creative', s==='cre');
+    btns.forEach(function(b){b.setAttribute('aria-pressed', b.dataset.side===s)});
+    doc.textContent = s==='cre' ? 'Side B' : 'Quality report';
+    document.querySelector('meta[name="theme-color"]').content = s==='cre' ? '#101010' : '#EFECE4';
+    try{history.replaceState(null,'',s==='cre'?'#creative':location.pathname)}catch(e){}
+    if(scroll) window.scrollTo(0,0);
   }
-  document.querySelectorAll('.switch button').forEach(function(b){b.addEventListener('click',function(){setMode(b.dataset.mode,true)})});
-  document.querySelectorAll('[data-goto]').forEach(function(b){b.addEventListener('click',function(){setMode(b.dataset.goto,true)})});
-
-  // ---- reveal ----
-  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}})},{threshold:.12,rootMargin:'0px 0px -4% 0px'});
-  function observeAll(){document.querySelectorAll('.rv:not(.on)').forEach(function(el){io.observe(el)})}
-
-  // ---- lazy video ----
-  var vio=new IntersectionObserver(function(es){es.forEach(function(e){var v=e.target;
-    if(e.isIntersecting){if(!v.src&&v.dataset.src)v.src=v.dataset.src;if(!reduced)v.play&&v.play().catch(function(){})}
-    else v.pause&&v.pause()})},{rootMargin:'200px 0px'});
-  function loadVisibleVideos(){document.querySelectorAll('video[data-src]').forEach(function(v){vio.unobserve(v);if(v.offsetParent!==null||v.closest('.hero-video'))vio.observe(v)})}
-
-  // ---- progress ----
-  var prog=document.getElementById('prog');
-  addEventListener('scroll',function(){var h=document.documentElement,max=h.scrollHeight-h.clientHeight;prog.style.transform='scaleX('+(max?h.scrollTop/max:0)+')'},{passive:true});
-
-  var start=location.hash==='#creative'?'creative':'engineer';
-  setMode(start,false);
+  btns.forEach(function(b){b.addEventListener('click',function(){set(b.dataset.side,true)})});
+  document.querySelectorAll('[data-goto]').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();set(a.dataset.goto,true)})});
+  set(location.hash==='#creative'?'cre':'eng',false);
 })();
 </script>
 </body>
