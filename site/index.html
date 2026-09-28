@@ -57,11 +57,12 @@ body:not(.creative) .side.eng, body.creative .side.cre{display:block}
 
 /* ---------- hero ---------- */
 .hero{padding:clamp(40px,7vh,84px) 0 0}
-.hero-grid{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:clamp(24px,4vw,56px);align-items:end}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1fr) clamp(260px,22vw,380px);gap:clamp(24px,4vw,64px);align-items:start}
+.hero-grid .fig{margin-top:44px}
 @media(max-width:860px){.hero-grid{grid-template-columns:1fr}}
 .kicker{font-family:var(--mono);font-size:12px;color:var(--mute);margin-bottom:22px}
 .kicker b{color:var(--ink);font-weight:500}
-h1{font-weight:800;font-variation-settings:"wdth" 64;text-transform:uppercase;letter-spacing:-.012em;
+h1{text-wrap:balance;font-weight:800;font-variation-settings:"wdth" 64;text-transform:uppercase;letter-spacing:-.012em;
   font-size:clamp(46px,9.2vw,142px);line-height:.86}
 h1 .lite{display:block;font-weight:300;font-style:italic;text-transform:none;font-variation-settings:"wdth" 88;letter-spacing:-.02em;
   font-size:.52em;line-height:1.05;margin-top:.3em;color:var(--ink)}
@@ -198,6 +199,10 @@ table.res td.b{color:var(--mute);font-size:13.5px}
 @media(max-width:700px){.credits{columns:1}}
 .credits b{color:var(--ink);font-weight:500}
 
+/* big monitors: wider measure, larger base type, headline on fewer lines */
+@media(min-width:1600px){body{font-size:18px}.w{max-width:1480px}h1{font-size:clamp(120px,7.6vw,168px)}.lede{max-width:880px}}
+@media(min-width:2200px){.w{max-width:1720px}body{font-size:19px}}
+
 @media (prefers-reduced-motion: reduce){*{transition:none!important}html{scroll-behavior:auto}}
 </style>
 </head>
@@ -237,7 +242,7 @@ table.res td.b{color:var(--mute);font-size:13.5px}
     <div><dt>Experience</dt><dd>14<small>yrs</small></dd><p class="note">QE in regulated finance</p></div>
     <div><dt>At the bank</dt><dd>3</dd><p class="note">AI-built testing tools in use</p></div>
     <div><dt>LLM runs</dt><dd>499</dd><p class="note">logged and measured, not estimated</p></div>
-    <div><dt>DayDrop installs</dt><dd>5.5K</dd><p class="note">in 175 countries · 4.6★ from 81 ratings</p></div>
+    <div><dt>DayDrop installs</dt><dd>5.5K</dd><p class="note">175 countries · 4.6★ from 81 ratings · as of Sep 28, 2026</p></div>
     <div><dt>Awards</dt><dd>3</dd><p class="note">innovation and project awards</p></div>
   </dl>
 </section>
@@ -328,7 +333,7 @@ table.res td.b{color:var(--mute);font-size:13.5px}
 
     <!-- DayDrop -->
     <article class="proj">
-      <div class="proj-h"><h3>DayDrop</h3><span class="tagline">iOS app · 5,500+ installs · 175 countries · 4.6★ from 81 ratings</span></div>
+      <div class="proj-h"><h3>DayDrop</h3><span class="tagline">iOS app · 5,500+ installs · 175 countries · 4.6★ from 81 ratings · as of Sep 28, 2026</span></div>
       <div class="body">
         <div>
           <p>Countdown widgets with <b>AI-generated backgrounds</b>, Dynamic Island Live Activities and iCloud sync. I built it
