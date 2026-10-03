@@ -117,6 +117,7 @@ h2{font-weight:800;font-variation-settings:"wdth" 72;font-size:clamp(30px,4.4vw,
 .proj + .proj{margin-top:clamp(56px,8vh,84px);padding-top:26px;border-top:1px solid var(--soft)}
 .proj-h{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:8px 20px}
 .proj-h h3{font-weight:800;font-variation-settings:"wdth" 75;font-size:clamp(32px,4vw,52px);line-height:1;text-transform:uppercase}
+.tl{text-decoration:none}.tl:hover,.tl:focus-visible{text-decoration:underline}.tl::after{content:"\2009\2197";font-size:.55em;vertical-align:.35em;color:var(--mute)}.il{text-decoration:underline;text-decoration-color:var(--mute)}.il:hover{text-decoration-color:currentColor}
 .proj-h .tagline{font-family:var(--mono);font-size:12px;color:var(--mute)}
 .proj .body{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:clamp(20px,3.4vw,48px);margin-top:18px}
 @media(max-width:900px){.proj .body{grid-template-columns:1fr}}
@@ -256,8 +257,8 @@ body.creative .hl{--m:255,200,0;color:#121212}
   <dl class="summary">
     <div><dt>Experience</dt><dd>14<small>yrs</small></dd><p class="note">QE in regulated finance</p></div>
     <div><dt>At the bank</dt><dd>3</dd><p class="note">AI-built testing tools in use</p></div>
-    <div><dt>LLM runs</dt><dd>499</dd><p class="note">logged and measured, not estimated</p></div>
-    <div><dt>DayDrop installs</dt><dd>5.5K</dd><p class="note">175 countries · 4.6★ from 81 ratings · as of Sep 28, 2026</p></div>
+    <div><dt><a class="il" href="#work">LLM runs</a></dt><dd>499</dd><p class="note">logged and measured, not estimated</p></div>
+    <div><dt><a class="il" href="https://apps.apple.com/app/id6759470132" target="_blank" rel="noopener noreferrer">DayDrop installs</a></dt><dd>5.5K</dd><p class="note">175 countries · 4.6★ from 81 ratings · as of Sep 28, 2026</p></div>
     <div><dt>Awards</dt><dd>3</dd><p class="note">innovation and project awards</p></div>
   </dl>
 </section>
@@ -305,7 +306,7 @@ body.creative .hl{--m:255,200,0;color:#121212}
 
     <!-- SwiftGen -->
     <article class="proj">
-      <div class="proj-h"><h3>SwiftGen AI</h3><span class="tagline">Multi-agent iOS app generator · solo · prepared for Y Combinator</span></div>
+      <div class="proj-h"><h3><a class="tl" href="https://swiftgenai.dev" target="_blank" rel="noopener noreferrer">SwiftGen AI</a></h3><span class="tagline">Multi-agent iOS app generator · solo · prepared for Y Combinator</span></div>
       <div class="body">
         <div>
           <p>You describe an app in one sentence. SwiftGen plans it, writes native SwiftUI, compiles it, repairs what breaks,
@@ -349,7 +350,7 @@ body.creative .hl{--m:255,200,0;color:#121212}
 
     <!-- DayDrop -->
     <article class="proj">
-      <div class="proj-h"><h3>DayDrop</h3><span class="tagline">iOS app · 5,500+ installs · 175 countries · 4.6★ from 81 ratings · as of Sep 28, 2026</span></div>
+      <div class="proj-h"><h3><a class="tl" href="https://apps.apple.com/app/id6759470132" target="_blank" rel="noopener noreferrer">DayDrop</a></h3><span class="tagline">iOS app · 5,500+ installs · 175 countries · 4.6★ from 81 ratings · as of Sep 28, 2026</span></div>
       <div class="body">
         <div>
           <p>Countdown widgets with <b>AI-generated backgrounds</b>, Dynamic Island Live Activities and iCloud sync. I built it
@@ -369,7 +370,7 @@ body.creative .hl{--m:255,200,0;color:#121212}
 
     <!-- Stackwrite -->
     <article class="proj">
-      <div class="proj-h"><h3>Stackwrite</h3><span class="tagline">Developer reference · written by an 8-agent pipeline</span></div>
+      <div class="proj-h"><h3><a class="tl" href="https://stackwrite.com" target="_blank" rel="noopener noreferrer">Stackwrite</a></h3><span class="tagline">Developer reference · written by an 8-agent pipeline</span></div>
       <div class="body">
         <div>
           <p>A reference site on developer-tool pricing and limits, produced by agents on a schedule. The part I care about is
@@ -386,11 +387,12 @@ body.creative .hl{--m:255,200,0;color:#121212}
 
     <!-- Open source -->
     <article class="proj">
-      <div class="proj-h"><h3>Open source</h3><span class="tagline">github.com/hirakcoder</span></div>
+      <div class="proj-h"><h3><a class="tl" href="https://github.com/hirakcoder" target="_blank" rel="noopener noreferrer">Open source</a></h3><span class="tagline"><a class="il" href="https://github.com/hirakcoder" target="_blank" rel="noopener noreferrer">github.com/hirakcoder</a></span></div>
       <div class="rows" style="margin-top:14px">
-        <div class="row"><p class="id">OSS-1</p><div><h3>RadioWave</h3><p>A macOS menu-bar app that turns Claude Code's live activity into synthesized radio sound, through Claude Code hooks. MIT.</p></div><p class="meta"><a href="https://github.com/hirakcoder/RadioWave" target="_blank" rel="noopener noreferrer">GitHub ↗</a></p></div>
-        <div class="row"><p class="id">OSS-2</p><div><h3>llms-txt-init</h3><p>One command that scaffolds an llms.txt and an AI-crawler-aware robots.txt for any site.</p></div><p class="meta"><a href="https://github.com/hirakcoder/llms-txt-init" target="_blank" rel="noopener noreferrer">GitHub ↗</a></p></div>
-        <div class="row"><p class="id">OSS-3</p><div><h3>tiktok-produce</h3><p>Screen recording in, short video out: voiceover, synced captions and a 1080×1920 render in one command.</p></div><p class="meta"><a href="https://github.com/hirakcoder/tiktok-produce" target="_blank" rel="noopener noreferrer">GitHub ↗</a></p></div>
+        <div class="row"><p class="id">OSS-1</p><div><h3><a class="tl" href="https://github.com/hirakCoder/testgen-evals" target="_blank" rel="noopener noreferrer">testgen-evals</a></h3><p>An evaluation harness for LLM-generated test cases: deterministic metrics (schema, acceptance-criteria coverage, duplicates, untestable steps) plus an LLM-as-judge rubric with a position-bias check. In the committed run, tag-level coverage read <span class="hl">100%</span> while the judge scored 9 of 52 cases 2/5 on completeness. MIT.</p></div><p class="meta"><a href="https://github.com/hirakCoder/testgen-evals" target="_blank" rel="noopener noreferrer">GitHub ↗</a></p></div>
+        <div class="row"><p class="id">OSS-2</p><div><h3><a class="tl" href="https://github.com/hirakcoder/RadioWave" target="_blank" rel="noopener noreferrer">RadioWave</a></h3><p>A macOS menu-bar app that turns <a class="il" href="https://docs.claude.com/en/docs/claude-code/overview" target="_blank" rel="noopener noreferrer">Claude Code</a>'s live activity into synthesized radio sound, through Claude Code hooks. MIT.</p></div><p class="meta"><a href="https://github.com/hirakcoder/RadioWave" target="_blank" rel="noopener noreferrer">GitHub ↗</a></p></div>
+        <div class="row"><p class="id">OSS-3</p><div><h3><a class="tl" href="https://github.com/hirakcoder/llms-txt-init" target="_blank" rel="noopener noreferrer">llms-txt-init</a></h3><p>One command that scaffolds an llms.txt and an AI-crawler-aware robots.txt for any site.</p></div><p class="meta"><a href="https://github.com/hirakcoder/llms-txt-init" target="_blank" rel="noopener noreferrer">GitHub ↗</a></p></div>
+        <div class="row"><p class="id">OSS-4</p><div><h3><a class="tl" href="https://github.com/hirakcoder/tiktok-produce" target="_blank" rel="noopener noreferrer">tiktok-produce</a></h3><p>Screen recording in, short video out: voiceover, synced captions and a 1080×1920 render in one command.</p></div><p class="meta"><a href="https://github.com/hirakcoder/tiktok-produce" target="_blank" rel="noopener noreferrer">GitHub ↗</a></p></div>
       </div>
     </article>
   </div>
@@ -439,11 +441,11 @@ body.creative .hl{--m:255,200,0;color:#121212}
       </div>
       <div class="item">
         <p class="yr">2008 – 2012</p>
-        <div><h3>B.Tech, Civil &amp; Transportation Engineering</h3><p class="co">National Institute of Technology, Agartala</p></div>
+        <div><h3>B.Tech, Civil &amp; Transportation Engineering</h3><p class="co"><a class="il" href="https://www.nita.ac.in" target="_blank" rel="noopener noreferrer">National Institute of Technology, Agartala</a></p></div>
       </div>
     </div>
     <p class="kit"><b>Testing:</b> Java, Selenium, Cucumber BDD, TestNG, REST Assured, XCUITest, Appium, Jenkins, Docker. <b>Payments &amp; data:</b> Apache Kafka,
-    Oracle, SQL Server, MongoDB, mainframe. <b>AI &amp; LLM engineering:</b> multi-model orchestration and routing (Claude, GPT, Gemini, Grok APIs), schema-enforced output, validation and self-healing loops, evaluation harnesses, prompt engineering, token and cost tracking, Claude Code, GitHub Copilot, MCP.
+    Oracle, SQL Server, MongoDB, mainframe. <b>AI &amp; LLM engineering:</b> multi-model orchestration and routing (Claude, GPT, Gemini, Grok APIs), schema-enforced output, validation and self-healing loops, <a class="il" href="https://github.com/hirakCoder/testgen-evals" target="_blank" rel="noopener noreferrer">evaluation harnesses</a>, prompt engineering, token and cost tracking, <a class="il" href="https://docs.claude.com/en/docs/claude-code/overview" target="_blank" rel="noopener noreferrer">Claude Code</a>, <a class="il" href="https://github.com/features/copilot" target="_blank" rel="noopener noreferrer">GitHub Copilot</a>, <a class="il" href="https://modelcontextprotocol.io" target="_blank" rel="noopener noreferrer">MCP</a>.
     <b>Building:</b> Swift and SwiftUI, Python, FastAPI, Next.js, Docker, Cloudflare.</p>
   </div>
 </section>
@@ -459,7 +461,7 @@ body.creative .hl{--m:255,200,0;color:#121212}
   <dl class="summary four">
     <div><dt>Singles</dt><dd>2</dd><p class="note">written, produced, mixed</p></div>
     <div><dt>Short film</dt><dd>1</dd><p class="note">festival submission</p></div>
-    <div><dt>Subscribers</dt><dd>1.8K</dd><p class="note">in two months</p></div>
+    <div><dt><a class="il" href="https://youtube.com/@footballmemesai" target="_blank" rel="noopener noreferrer">Subscribers</a></dt><dd>1.8K</dd><p class="note">in two months</p></div>
     <div><dt>One video</dt><dd>257K</dd><p class="note">views</p></div>
   </dl>
 </section>
@@ -470,29 +472,29 @@ body.creative .hl{--m:255,200,0;color:#121212}
     <div class="tracks">
       <div class="track">
         <p class="side-id">A1</p>
-        <img class="art" src="img/v4/sach.jpg" alt="Sach single cover" loading="lazy" width="480" height="480">
-        <div><h3>Sach</h3><p class="role">Single · Hindi · written, composed, produced, mixed and mastered</p>
-        <p>Produced in FL Studio and GarageBand, from first idea to master.</p></div>
-        <a class="go" href="https://open.spotify.com/album/2iuU054zylSyOvyknbgKQS" target="_blank" rel="noopener noreferrer">Spotify ↗</a>
+        <img class="art" src="img/v4/unkaheen.jpg" alt="Unkaheen single cover" loading="lazy" width="480" height="480">
+        <div><h3><a class="tl" href="https://open.spotify.com/track/3QHxGSHYniiJPI5bJt16Km" target="_blank" rel="noopener noreferrer">Unkaheen</a></h3><p class="role">Single · Hindi · written, composed, produced, mixed and mastered</p>
+        <p>The first release. Produced in <a class="il" href="https://www.image-line.com/fl-studio/" target="_blank" rel="noopener noreferrer">FL Studio</a> and <a class="il" href="https://www.apple.com/mac/garageband/" target="_blank" rel="noopener noreferrer">GarageBand</a>, from first idea to master.</p></div>
+        <a class="go" href="https://open.spotify.com/track/3QHxGSHYniiJPI5bJt16Km" target="_blank" rel="noopener noreferrer">Spotify ↗</a>
       </div>
       <div class="track">
         <p class="side-id">A2</p>
-        <img class="art" src="img/v4/unkaheen.jpg" alt="Unkaheen single cover" loading="lazy" width="480" height="480">
-        <div><h3>Unkaheen</h3><p class="role">Single · Hindi · written, composed, produced, mixed and mastered</p>
-        <p>The second release, built the same way in FL Studio and GarageBand.</p></div>
-        <a class="go" href="https://open.spotify.com/track/3QHxGSHYniiJPI5bJt16Km" target="_blank" rel="noopener noreferrer">Spotify ↗</a>
+        <img class="art" src="img/v4/sach.jpg" alt="Sach single cover" loading="lazy" width="480" height="480">
+        <div><h3><a class="tl" href="https://open.spotify.com/album/2iuU054zylSyOvyknbgKQS" target="_blank" rel="noopener noreferrer">Sach</a></h3><p class="role">Single · Hindi · written, composed, produced, mixed and mastered</p>
+        <p>The latest release, built the same way in FL Studio and GarageBand.</p></div>
+        <a class="go" href="https://open.spotify.com/album/2iuU054zylSyOvyknbgKQS" target="_blank" rel="noopener noreferrer">Spotify ↗</a>
       </div>
       <div class="track">
         <p class="side-id">B1</p>
         <div class="art type">Short<br>film</div>
         <div><h3>The short</h3><p class="role">Writer · director · editor · producer</p>
-        <p>Made end to end, from pre-production through the edit in Sony Vegas Pro to the final grade and sound mix, and submitted to a film festival.</p></div>
+        <p>Made end to end, from pre-production through the edit in <a class="il" href="https://www.vegascreativesoftware.com/" target="_blank" rel="noopener noreferrer">Sony Vegas Pro</a> to the final grade and sound mix, and submitted to a film festival.</p></div>
         <span class="go" style="color:var(--mute)">Not online yet</span>
       </div>
       <div class="track">
         <p class="side-id">B2</p>
         <div class="art type">Football<br>Memes<br>AI</div>
-        <div><h3>FootballMemesAI</h3><p class="role">YouTube · creator · editor</p>
+        <div><h3><a class="tl" href="https://youtube.com/@footballmemesai" target="_blank" rel="noopener noreferrer">FootballMemesAI</a></h3><p class="role">YouTube · creator · editor</p>
         <p>Short-form football content, scripted, edited and published. <span class="hl">1,800 subscribers in its first two months</span>, and one
         video reached 257,000 views.</p></div>
         <a class="go" href="https://youtube.com/@footballmemesai" target="_blank" rel="noopener noreferrer">YouTube ↗</a>
@@ -518,6 +520,9 @@ body.creative .hl{--m:255,200,0;color:#121212}
     <a href="https://linkedin.com/in/hirak-banerjee-906aa940/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
     <a href="https://github.com/hirakcoder" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
     <a href="https://x.com/hirak8" target="_blank" rel="noopener noreferrer">X ↗</a>
+    <a href="https://github.com/hirakCoder/testgen-evals" target="_blank" rel="noopener noreferrer">testgen-evals ↗</a>
+    <a href="https://youtube.com/@footballmemesai" target="_blank" rel="noopener noreferrer">YouTube ↗</a>
+    <a href="https://linktr.ee/hirak10" target="_blank" rel="noopener noreferrer">Music ↗</a>
   </p>
 </section>
 
