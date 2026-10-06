@@ -385,6 +385,26 @@ body.creative .hl{--m:255,200,0;color:#121212}
       </div>
     </article>
 
+    <!-- SiteAuditAI -->
+    <article class="proj">
+      <div class="proj-h"><h3><a class="tl" href="https://siteauditai.com" target="_blank" rel="noopener noreferrer">SiteAuditAI</a></h3><span class="tagline">Web app · live · one-click website audit with paid reports</span></div>
+      <div class="body">
+        <div>
+          <p>Paste a URL and get a plain-English report on accessibility (WCAG 2.1 AA via axe-core), security headers, SEO,
+          performance and cross-browser rendering, with the risk explained by Claude and a Stripe-gated PDF. Next.js and TypeScript
+          on Supabase; the scanner runs real browsers through Playwright.</p>
+          <p>Tested the way I'd test a bank's checkout: <b class="hl">11 Playwright end-to-end specs</b> cover the scan flow, purchase
+          flow, subscriber and upsell states, the monthly cap, pricing and accessibility; <b>9 API test suites</b> cover feature gating,
+          checkout and scan routes. Entitlements and payments are verified, not assumed.</p>
+          <p class="links"><a href="https://siteauditai.com" target="_blank" rel="noopener noreferrer">siteauditai.com ↗</a><a href="https://whatswrongwithmysite.com" target="_blank" rel="noopener noreferrer">whatswrongwithmysite.com ↗</a></p>
+        </div>
+        <div>
+          <p class="pipe">url → crawl → <b>axe-core</b> + headers + SEO + vitals → screenshots → <b>Claude summary</b> → risk score → <b>Stripe</b> → PDF</p>
+          <p class="figline" style="margin-top:10px">Bold steps are gated by tests. The second domain is the plain-language funnel into the same scanner.</p>
+        </div>
+      </div>
+    </article>
+
     <!-- Open source -->
     <article class="proj">
       <div class="proj-h"><h3><a class="tl" href="https://github.com/hirakcoder" target="_blank" rel="noopener noreferrer">Open source</a></h3><span class="tagline"><a class="il" href="https://github.com/hirakcoder" target="_blank" rel="noopener noreferrer">github.com/hirakcoder</a></span></div>
