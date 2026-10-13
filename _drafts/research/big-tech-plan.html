@@ -1,0 +1,153 @@
+<title>Big Tech Plan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
+<style>
+:root{
+  --ground:#f5f6f8; --surface:#ffffff; --ink:#18202b; --ink-2:#384252; --muted:#5d6878; --rule:#dde2e8;
+  --accent:#1d5c86; --accent-soft:#e7eff5;
+  --strong:#1d7449; --strong-bg:#e3f2ea; --moderate:#8f5a00; --moderate-bg:#fbefd9;
+  --weak:#a8402b; --weak-bg:#f9e4df; --none:#5d6878; --none-bg:#eceef1;
+  --sans:'Public Sans', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif;
+  --serif:'Source Serif 4', Georgia, 'Times New Roman', serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --ground:#11151b; --surface:#181e26; --ink:#e7eaef; --ink-2:#c6ccd5; --muted:#98a2b0; --rule:#2a323d;
+    --accent:#86b9df; --accent-soft:#1c2a36;
+    --strong:#7fd0a3; --strong-bg:#173426; --moderate:#e9b55c; --moderate-bg:#362a14;
+    --weak:#f09a85; --weak-bg:#3a201a; --none:#a6afbb; --none-bg:#252c35;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --ground:#11151b; --surface:#181e26; --ink:#e7eaef; --ink-2:#c6ccd5; --muted:#98a2b0; --rule:#2a323d;
+  --accent:#86b9df; --accent-soft:#1c2a36;
+  --strong:#7fd0a3; --strong-bg:#173426; --moderate:#e9b55c; --moderate-bg:#362a14;
+  --weak:#f09a85; --weak-bg:#3a201a; --none:#a6afbb; --none-bg:#252c35;
+}
+*{box-sizing:border-box}
+body{background:var(--ground);color:var(--ink);font-family:var(--serif);font-size:18px;line-height:1.65;padding-inline:16px;padding-block:0 64px}
+a{color:var(--accent);text-underline-offset:3px;text-decoration-thickness:1px}
+a:hover{text-decoration-thickness:2px}
+a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.shell{max-width:1140px;margin:0 auto}
+header.top{padding-block:40px 28px;border-bottom:1px solid var(--rule)}
+.kicker{font-family:var(--sans);font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+h1{font-family:var(--sans);font-weight:700;font-size:clamp(30px,4.6vw,46px);line-height:1.1;letter-spacing:-.02em;margin:10px 0 0;text-wrap:balance;max-width:20ch}
+.meta{font-family:var(--sans);font-size:14px;color:var(--muted);margin-top:14px}
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:28px}
+.stat{background:var(--surface);border:1px solid var(--rule);padding:16px 16px 14px}
+.stat b{display:block;font-family:var(--sans);font-size:26px;font-weight:700;letter-spacing:-.01em;font-variant-numeric:tabular-nums;color:var(--ink)}
+.stat span{display:block;font-family:var(--sans);font-size:13.5px;line-height:1.4;color:var(--muted);margin-top:4px}
+.layout{display:grid;grid-template-columns:240px minmax(0,1fr);gap:56px;margin-top:36px;align-items:start}
+nav.toc{position:sticky;top:calc(env(safe-area-inset-top,0px) + 20px);font-family:var(--sans);font-size:14px;line-height:1.4}
+nav.toc p{font-weight:600;color:var(--muted);font-size:12px;letter-spacing:.06em;text-transform:uppercase;margin:0 0 10px}
+nav.toc ol{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+nav.toc a{color:var(--ink-2);text-decoration:none}
+nav.toc a:hover{color:var(--accent);text-decoration:underline}
+nav.toc li.l3{padding-left:14px;font-size:13.5px}
+main{max-width:720px}
+.summary{background:var(--surface);border:1px solid var(--rule);border-left:4px solid var(--accent);padding:22px 24px;font-size:18px}
+.summary p{margin:0}
+.legend{display:flex;flex-wrap:wrap;gap:10px 18px;margin:18px 0 0;font-family:var(--sans);font-size:14px;color:var(--muted)}
+.legend div{display:flex;gap:8px;align-items:baseline;flex:1 1 300px}
+h2{font-family:var(--sans);font-weight:700;font-size:26px;line-height:1.2;letter-spacing:-.01em;margin:56px 0 14px;text-wrap:balance;scroll-margin-top:20px}
+h3{font-family:var(--sans);font-weight:700;font-size:20px;margin:44px 0 12px;scroll-margin-top:20px}
+main p{margin:0 0 18px;color:var(--ink)}
+strong{font-weight:600}
+code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.85em;background:var(--accent-soft);padding:1px 5px;border-radius:3px}
+.chip{display:inline-block;font-family:var(--sans);font-size:12.5px;font-weight:600;line-height:1;padding:4px 8px 4px;border-radius:3px;white-space:nowrap;vertical-align:1px}
+.chip--strong{color:var(--strong);background:var(--strong-bg)}
+.chip--moderate{color:var(--moderate);background:var(--moderate-bg)}
+.chip--weak{color:var(--weak);background:var(--weak-bg)}
+.chip--none{color:var(--none);background:var(--none-bg)}
+.tablewrap{overflow-x:auto;margin:8px 0 24px;border:1px solid var(--rule);background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-family:var(--sans);font-size:14.5px;line-height:1.45}
+th{text-align:left;font-weight:600;font-size:12.5px;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);padding:12px 14px;border-bottom:1px solid var(--rule);white-space:nowrap}
+td{padding:12px 14px;border-bottom:1px solid var(--rule);vertical-align:top;color:var(--ink)}
+tbody tr:last-child td{border-bottom:0}
+td.num{font-weight:700;font-variant-numeric:tabular-nums;color:var(--accent)}
+footer{font-family:var(--sans);font-size:13.5px;color:var(--muted);margin-top:56px;padding-top:18px;border-top:1px solid var(--rule)}
+@media (max-width:980px){
+  .layout{grid-template-columns:1fr;gap:0}
+  nav.toc{position:static;background:var(--surface);border:1px solid var(--rule);padding:16px 18px;margin-bottom:28px}
+  .stats{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:480px){
+  body{font-size:17px}
+  .summary{padding:18px}
+  h2{font-size:23px}
+  table{min-width:560px}
+}
+main ul, main ol{margin:0 0 18px;padding-left:22px}
+main li{margin:0 0 8px}
+</style>
+
+<div class="shell">
+  <header class="top">
+    <div class="kicker">hirak banerjee · career plan</div>
+    <h1>Get hired as an engineer, not as a tester</h1>
+    <p class="meta">How to land a software-engineering role at Google, Microsoft, Apple or Amazon from St. Thomas, Ontario, with SwiftGen presented as a measured skill. Built from three research tracks and a read of the live LinkedIn, GitHub and portfolio. 13 October 2026.</p>
+    <div class="stats" role="list">
+      <div class="stat" role="listitem"><b>0</b><span>Test Engineer, SDET or QAE postings at Google, Microsoft, Amazon or Meta in Canada today; the doors are Software Engineer doors</span></div>
+      <div class="stat" role="listitem"><b>1 remote</b><span>Microsoft Senior Software Engineer, job 200060560, IC4, CA$114–204K base, Java accepted, Kafka and LLM evals preferred</span></div>
+      <div class="stat" role="listitem"><b>~11 h/wk × 12</b><span>the only published coding-prep plan with numbers; first loops January–February 2027</span></div>
+      <div class="stat" role="listitem"><b>43.5% → 53%</b><span>SwiftGen first-pass success, recomputed from 499 logged runs, after promoting repeat repairs upstream</span></div>
+    </div>
+  </header>
+
+  <div class="layout">
+    <nav class="toc" aria-label="Contents">
+      <p>Contents</p>
+      <ol><li class="l2"><a href="#what-the-market-actually-looks-like-toda">What the market actually looks like today</a></li><li class="l2"><a href="#what-the-loop-tests-and-what-it-doesn-t">What the loop tests, and what it doesn&#x27;t</a></li><li class="l2"><a href="#why-your-profile-reads-as-a-tester-and-t">Why your profile reads as a tester, and the fix</a></li><li class="l2"><a href="#swiftgen-presented-as-a-skill">SwiftGen, presented as a skill</a></li><li class="l2"><a href="#the-doors-ranked">The doors, ranked</a></li><li class="l2"><a href="#the-next-twelve-weeks">The next twelve weeks</a></li><li class="l2"><a href="#what-i-need-from-you">What I need from you</a></li><li class="l2"><a href="#where-this-plan-is-weak">Where this plan is weak</a></li></ol>
+    </nav>
+    <main>
+      <div class="summary"><p>This is a plan for landing a role at Google, Microsoft, Apple or Amazon from where you are on 13 October 2026: 14 years in quality engineering, a bank payments platform on your current résumé, strong AI tooling work, St. Thomas, Ontario, a full-time job that must not be put at risk, and a floor of CA$140K base (CA$160–170K to relocate to Toronto). It rests on three research tracks run today (live postings and interview loops at the five companies; what recruiters and hiring data actually say about candidates like you; SwiftGen recomputed from its own run log), plus my read of your LinkedIn, GitHub and portfolio site. Each claim is labelled <span class="chip chip--strong">Official</span> (the company's own pages), <span class="chip chip--moderate">Data</span> (a measured study or levels.fyi), <span class="chip chip--weak">Anecdote</span> (candidate reports) or <span class="chip chip--none">Judgement</span> (my call). Odds are not quantifiable from any source, and I won't pretend otherwise.</p></div>
+      <div class="legend" aria-label="Evidence ratings">
+        <div><span class="chip chip--strong">Official</span> the company's own careers pages and postings</div>
+        <div><span class="chip chip--moderate">Data</span> a measured study, survey with a stated sample, or levels.fyi</div>
+        <div><span class="chip chip--weak">Anecdote</span> candidate reports and third-party guides</div>
+        <div><span class="chip chip--none">Judgement</span> my call, reasoning shown</div>
+      </div>
+      <p>The short version. There is no path into these companies as a "Quality Engineer": as of today there are zero postings titled Test Engineer, SDET or QAE at Google, Microsoft, Amazon or Meta anywhere in Canada. The doors that exist are Software Engineer doors with a testing, tooling or AI-evaluation specialty, and they are won in a coding loop that no portfolio exempts you from. The good news is that your profile is unusually close to two live postings, one of them remote, and that SwiftGen plus the eval harness give you something most candidates in that loop don't have: a measured, honestly reported AI system of your own. The plan is therefore: reposition as an SDET-flavoured software engineer, apply to the two close fits now with referrals, and spend the next twelve weeks on the coding bar so the loops you earn in January are winnable.</p>
+<h2 id="what-the-market-actually-looks-like-toda">What the market actually looks like today</h2>
+<p><span class="chip chip--strong">Official</span>, snapshot 13 October 2026. Google Canada lists about twenty engineering roles, all titled "Software Developer", in Waterloo and Toronto; the closest fit is Android Infrastructure Software Developer (ID 142151738999087814: Kotlin or Java, 3 years of testing, maintaining or launching software, preferred experience "building developer tools that improve developer velocity, code quality and code health" and "AI-assisted and agentic developer tooling"). Its hard requirement of three years of Android work is the gap. Google's software Test Engineer and Engineering Productivity roles are US-only this quarter, and "Software Engineer, Tools and Infrastructure" returned nothing in Canada.</p>
+<p>Microsoft has the one remote engineering posting among the five: Senior Software Engineer, job 200060560, Vancouver, posted 11 October, "0 days / week in-office – remote", level IC4, official base range CA$114,400–203,900, on the Teams and M365 Copilot experimentation platform. Java is accepted; it requires production big-data or streaming platform experience and lists Kafka and LLM evaluation as preferred. That is the single closest match to your résumé in the country right now. Microsoft also has five Cloud Solution Architect roles in Toronto at two days a week in office, IC5, CA$128,000–222,400, requiring seven-plus years of cloud, infrastructure or software work. Caveat: Microsoft's September 2025 return-to-office policy (three days within 50 miles of an office) is rolling out to international offices "later in 2026", so a remote tag today may be renegotiated.</p>
+<p>Apple Vancouver has the only three title-matched postings in Canada: Tools and Automation Backend Quality Engineer, App Store Analytics (200663122: seven-plus years, Java or Python, REST, CI/CD, Kafka preferred) is a direct fit for your stack; two SDET roles on Creativity Apps (200680212 and 200682548) ask for Python or Swift and explicitly want "applied LLMs or GenAI tooling to test generation, failure analysis, or coverage-gap identification in a real engineering workflow", which is exactly what testgen-evals and the bank tools are. No pay shown; not flagged remote. Vancouver is a relocation you haven't said yes to.</p>
+<p>Amazon's 56 Canadian openings are all SDE; Amazon is five days in office since January 2025. Meta Toronto has one engineering role, in systems ML.</p>
+<p><em>Data (levels.fyi, updated today, CAD).</em> Your CA$140K base is met at Google L4 (Waterloo base CA$151K, total CA$246K), Microsoft 62 or IC4 (Vancouver base CA$138K, total CA$184K), Amazon L5 Toronto (base CA$154K, total CA$203K) and Apple ICT3 (base CA$142K, total CA$206K). CA$160–170K base needs Google L5, Microsoft 63–64 or an IC5 architect role, or Amazon L6. These are mid-level engineer bands; your fourteen years do not map to senior titles at these companies on entry, and that is normal for this move.</p>
+<h2 id="what-the-loop-tests-and-what-it-doesn-t">What the loop tests, and what it doesn't</h2>
+<p><em>Official.</em> Google: structured interviews against shared rubrics, a hiring assessment and coding exercise, one or two recruiter calls, optional project work, a panel, "roughly 6–8 weeks", AI tools banned in interviews, at most three applications per 30 days, and Canadian postings say in-person interviews are usual. Amazon SDE: a 90-minute online assessment (two coding problems, a 20-minute design section, work-style questions), then four 55-minute interviews, with a decision within five business days. Microsoft: "2–4 conversations"; candidate reports put it at four or five rounds of medium-difficulty coding with system design at SDE II and above, and offers about ten days after the loop (<span class="chip chip--weak">Anecdote</span>).</p>
+<p><em>Data.</em> interviewing.io's study of about 10,000 interviews found 46% of people who received offers had no big-brand employer on their résumé; the non-brand signals that predicted success were quantified bullets, at most two typos, completed courses and teaching experience. GitHub activity was not one of them. The same source's October 2025 survey: no FAANG company has dropped algorithmic rounds, and 58% of interviewers changed their question style because of AI cheating. HackerRank 2025 (n = 13,732) and Karat 2025 (n = 400 hiring leaders) point the same way: live human interviews are tightening, not loosening.</p>
+<p><em>What this means.</em> SwiftGen, the eval harness and the bank tools are what get a recruiter or referrer to say yes to a screen. They do not get you through the loop. The loop is won by three months of deliberate coding practice in Java, and there is no sourced shortcut: the only published plan with numbers is the Tech Interview Handbook's roughly eleven hours a week for three months over the Grind 75 set (<span class="chip chip--moderate">Data</span>, one source). Starting now, that puts your first loops in January or February 2027 and offers, if they come, in the first half of 2027.</p>
+<h2 id="why-your-profile-reads-as-a-tester-and-t">Why your profile reads as a tester, and the fix</h2>
+<p><span class="chip chip--none">Judgement</span>, from reading the profile today. A Microsoft or Google sourcer sees, in this order: "Senior Software Quality Engineer, Tata Consultancy Services", a headline that is a list of eleven keywords, 452 connections, one post with 394 impressions, a GitHub with zero followers and zero stars. The strong material (four honestly written projects, the eval harness, the bank tools) sits below the fold where sourcers rarely go. Three changes fix the first impression without changing a single fact.</p>
+<p><strong>Title.</strong> Your TCS designation stays on the résumé's employer line, but the LinkedIn position title should describe the work: "Software Engineer in Test (SDET), Payments Platform". That is what you do (Java frameworks, Jenkins pipelines, Kafka validation, AI test tooling) and it is the string sourcers search. <span class="chip chip--none">Judgement</span>, consistent with Google's own résumé guidance to mirror the posting's minimum-qualification language (<span class="chip chip--strong">Official</span>).</p>
+<p><strong>Headline.</strong> Replace the keyword list with one sentence a human would say: "Software engineer in test · I build the AI tooling and verification gates that let a bank ship payments every release · Java, Kafka, LLM evals · Shipped a measured multi-model code-generation pipeline and an open-source LLM eval harness". Still searchable, now readable.</p>
+<p><strong>Proof above the fold.</strong> The Featured section should carry three items a sourcer can verify in thirty seconds: the testgen-evals repository with its committed results, a SwiftGen case-study page with the metrics table (below), and the DayDrop App Store listing. Your 6 October certification post got 394 impressions; the next post should be the SwiftGen engineering finding (drafted below), because it shows judgement rather than a badge.</p>
+<p>Everything else on the profile is already right: the TCS entry describes the tools in the generic terms the bank requires, the Cognizant block is clean, the projects are honest, Open to Work is set to recruiters only, and the location reads London, Ontario area with "remote across Canada, hybrid in southwestern Ontario".</p>
+<h2 id="swiftgen-presented-as-a-skill">SwiftGen, presented as a skill</h2>
+<p><span class="chip chip--moderate">Data</span>, recomputed today from the raw log of 499 runs. Every number you've been using checks out: 220 of 333 generations succeeded end to end (66%), 71% over the last 100; first-pass success 43.5% overall and 53% over the last 100; 138 of 166 modifications succeeded (83%); the healer rescued 75 of 163 failed first builds (46%); median 141 seconds to a running app. Two things the recount added. First, a failure analysis nobody had done: of the 113 failed generations, 88 (78%) exhausted the three-attempt healer, and 25 (22%) never reached the compiler (nine unparseable outputs, fifteen schema failures on multi-screen apps). Second, a correction: the log records only Sonnet as the generating model, so "multi-model" must be framed as routing and fallback across Claude, GPT, Gemini and Grok, not as several models generating apps. Framing it the first way is what a careful interviewer would call out.</p>
+<p>The skill is not "I built an app generator". The skill, in the words of the postings that want it, is building LLM workflows with verification gates and measuring them: a zero-LLM pre-validator with 193 patterns and a safety guard, a bounded repair loop that de-duplicates errors and escalates to a stronger model, a compiler and simulator used as the evaluator, an append-only run log, and a learning loop that promoted recurring repairs upstream and lifted first-pass success from 43.5% to 53%. Apple's SDET postings ask for exactly "applied LLMs to test generation, failure analysis, or coverage-gap identification"; Amazon's 2026 SDE postings ask for "agentic evaluation frameworks, monitoring, and feedback loops that ensure correctness"; Microsoft's remote role lists LLM evaluation as preferred. SwiftGen is the evidence for all three, as long as it is presented as measurement rather than product.</p>
+<p>Ready to use, all numbers from the log, early-2026 models stated:</p>
+<p><strong>Résumé, four bullets for an AI-heavy role.</strong> SwiftGen AI, a multi-model LLM workflow with verification gates: idea to native SwiftUI, build, repair, launch in the iOS Simulator, edit by chat; solo, January to April 2026. Orchestration: intent and complexity classification routes each task across Claude Sonnet and Opus, GPT-4.1, Gemini 2.5 and Grok with per-task fallbacks, retries, truncation detection and timeouts; about 970 injected rules; schema-enforced screen-by-screen generation for apps with six or more screens. Verification of generated code: a zero-LLM pre-validator (193 patterns, about 15 cross-file fixers, a safety guard that rejects any fix that unbalances braces or deletes over half a file, explicit fixes for fabricated APIs), per-file typecheck, build, then launch, screenshot, process-alive and crash-log checks. Repair loop bounded at three attempts with de-duplicated errors and escalation to Opus; rescued 46% of failed first builds; every healer error logged (605, 431 fixed) and patterns seen five or more times at 80%+ success promoted upstream, lifting first-pass success from 43.5% to 53% on the last 100 runs. Measured from an append-only log of 499 runs: 66% end-to-end success (71% last 100), 83% modification success, median 2.4 minutes; 315 commits, about 70k lines of Python and 20k of TypeScript, about 130 tests.</p>
+<p><strong>The 70-second spoken answer</strong> ("tell me about a project you're proud of"). Situation: early this year I built SwiftGen alone; you describe an iOS app in a sentence and it generates native SwiftUI, compiles it, launches it in the simulator and lets you change it by chat. The hard part was not generation, it was stopping bad model output from reaching the user. Decisions, three: deterministic before paid, a regex pre-validator with 193 patterns that runs before any build and removes known failure classes including APIs the model invents; a bounded repair loop, at most three attempts, errors de-duplicated, the last attempt escalated to a stronger model; and an append-only log of every run so I could measure instead of guess. Result over 499 runs on early-2026 models: 66% end-to-end success, 71% over the last hundred, 83% on modifications; the repair loop rescued 46% of failed builds; and because recurring repairs were promoted into the validator, first-pass success rose from 43.5% to 53%. What I'd change: log which model did each repair, add a functional check beyond "it launched and didn't crash", and freeze a prompt set so re-runs on new models are comparable.</p>
+<p><strong>The LinkedIn post, framed as a finding.</strong> "An engineering finding from SwiftGen, my pipeline that turns a sentence into a built, running SwiftUI app. I logged every run: 499 of them, January to April 2026, early-2026 models. End-to-end success was 66%, 71% over the last 100. The number that taught me the most was the failure split. Of 113 failed generations, 88 reached the compiler and exhausted three model repair attempts. 25 never got there: the output could not be parsed into files, or a multi-screen app failed schema validation. Two different problems, two different fixes, and only the log told them apart. The repair loop rescued 46% of failed first builds. Useful, but every rescue is another model call. The cheaper lever was moving fixes upstream: errors reaching the healer were tracked (605 logged, 431 fixed) and recurring ones promoted into a zero-LLM pre-validator. First-pass success went from 43.5% overall to 53% on the last 100 runs. What I would not claim: that a passing build means a working app. The pipeline launches each app, screenshots it and scans crash logs, and that is still a weak check of behaviour. The harness is model-agnostic; these numbers are from that generation of models, not current ones."</p>
+<p><strong>Evidence to publish.</strong> Not the whole repository: it holds live secrets files, a server IP in the changelog, billing code, and documents whose claims ("Production Ready", "99.9% availability") the measured numbers contradict. Publish a scrubbed extract, "swiftgen-gates", with the six verification modules (pre-validator, healer, error tracker, runtime validator, crash monitor, logger), their tests, a README in the testgen-evals voice, and the run-log analysis as a Markdown report with the 60-line recompute script. Record one dated two-minute screen capture as a demonstration of the mechanism, not as evidence for the numbers. Re-run on current models only when you ask, and only after adding three log fields (healer model per attempt, complexity, failure stage) and freezing the prompt set.</p>
+<h2 id="the-doors-ranked">The doors, ranked</h2>
+<ol><li><strong>Microsoft Senior Software Engineer, remote Canada, job 200060560.</strong> Closest fit in the country; Java accepted; Kafka and LLM evaluation preferred; official range covers your floor. The risk is the "production big-data or streaming platform" requirement: your Kafka work is validation on a production payments platform, not building the platform, so the résumé must say precisely what you did with Kafka and let the hiring manager judge. Apply this week with a Microsoft-specific résumé, after one attempt at a referral through your network. <span class="chip chip--none">Judgement</span> on fit; <span class="chip chip--strong">Official</span> on the posting.</li><li><strong>Apple Vancouver, Tools and Automation Backend Quality Engineer, 200663122.</strong> Java, REST, CI/CD, Kafka preferred, seven-plus years: your stack. Only if Vancouver is on the table; you have only said yes to Toronto. Decide before applying.</li><li><strong>Adjacent remote employers with live roles and your floor in range:</strong> Wealthsimple (AI Platform, Observability Platform, LLM Infrastructure; remote Canada; CA$152–189K on prior postings), GitLab (AI engineering, remote Canada), Atlassian. Stable, remote, and their loops are lighter than Google's. These are not "big tech" by name but they meet every criterion you set, and a year at one of them makes the Google or Microsoft application a lateral move instead of a leap.</li><li><strong>Google Waterloo, Android Infrastructure Software Developer.</strong> Preferred qualifications read like your profile; the three-year Android requirement does not. Apply only if a Google contact says the Android line is soft; otherwise register a candidate profile so Google can reach out, and revisit when a Test Engineer or Engineering Productivity role opens in Canada.</li><li><strong>Amazon SDE Toronto.</strong> Five days in office, full SDE loop, L5 base CA$154K. A relocation at your threshold, winnable after the prep below. Keep for the second quarter of 2027.</li></ol>
+<h2 id="the-next-twelve-weeks">The next twelve weeks</h2>
+<p><strong>Weeks 1–2, positioning (I do, you approve).</strong> Headline, position title and Featured section changed as above; the SwiftGen post published; GitHub bio written and six repositories pinned (pinning needs you on github.com); the swiftgen-gates extract and run-log report published after you've read them; a Microsoft-specific résumé built from the QE one with the Kafka and LLM-evaluation lines moved to the top; application to 200060560 prepared for your click; Google candidate profile created.</p>
+<p><strong>Weeks 1–12, the coding bar (you do; I build the tracker and the drills).</strong> Grind 75 in Java, eleven hours a week, which is ninety minutes on weekdays and three hours on one weekend day; one timed mock a week from week four; system design at a light level (one chapter a week of a standard guide, since design is weighted at Microsoft and Amazon but not at the test bar); one hour a week of Python basics, because Apple's SDET postings and most AI-evaluation roles ask for it and you have told me you are not fluent. Behavioural stories written once and reused: six from the bank tools, four from SwiftGen, two from DayDrop, mapped to Amazon's leadership principles and Google's "accomplished X as measured by Y by doing Z" format.</p>
+<p><strong>Weeks 1–12, the network (you do, ten minutes a day).</strong> Ten to fifteen connection requests a day to engineers and recruiters at Microsoft, Apple, Google and the adjacent firms in Canada, no note, no automation; replies answered by you. A referral is asked for only after a real exchange, and never from a stranger. No public post about looking.</p>
+<p><strong>Discretion.</strong> Open to Work stays recruiters-only; LinkedIn's own documentation says it cannot guarantee your employer's recruiters won't see it, so nothing on the profile should say "looking" in words. Ontario bans non-competes, but non-solicit and confidentiality terms in a TCS contract remain enforceable, so the bank is never named and no client material is ever shown. Interviews happen on your own device and your own time.</p>
+<h2 id="what-i-need-from-you">What I need from you</h2>
+<ul><li>Yes or no on Vancouver. It decides whether Apple's three roles are in the plan.</li><li>Approval of the headline, title and Featured changes, then I apply them in LinkedIn directly.</li><li>Approval to publish the swiftgen-gates extract and the run-log report once I've scrubbed them and you've read the README.</li><li>Pin six repositories on github.com when I send the list.</li><li>Ninety minutes a day. The plan fails without it, and no amount of profile work substitutes.</li></ul>
+<h2 id="where-this-plan-is-weak">Where this plan is weak</h2>
+<p>The three researchers ran out of web-search budget and worked from direct fetches, so Glassdoor, Blind and Reddit were unreadable; everything about Microsoft's and Apple's loops beyond the official pages is thin. No North American account of a service-company tester moving into big tech was fully readable, so the "it has been done" evidence is one named Bengaluru case and thread titles. Google's four-attribute rubric could not be found on its current pages. Referral conversion rates are published by none of the five. The remote tag on the Microsoft role may not survive its 2026 return-to-office rollout. And the honest answer to "what are my odds" is that no source lets anyone compute them; what the sources do say is that the people who got through without a brand name had quantified résumés, clean writing and months of practice.</p>
+      <footer>Source notes: ~/hirakCoder.github.io/_drafts/research/ (bigtech_roles_and_loops.md, qe_to_bigtech_evidence.md, swiftgen_skill_framing.md). Every posting ID above is in those notes with its URL.</footer>
+    </main>
+  </div>
+</div>
